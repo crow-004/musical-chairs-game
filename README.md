@@ -1,6 +1,6 @@
 # Musical Chairs on Web3
 
-![Game Banner](https://github.com/crow-004/musical-chairs-game/blob/main/docs/banner.png)
+![Game Banner](https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/banner.png)
 
 A real-time multiplayer musical chairs game on the blockchain, built with Go and Web3 technologies. This project is a showcase of a full-stack application featuring a Go backend, smart contracts on Ethereum, and a vanilla JavaScript frontend.
 
