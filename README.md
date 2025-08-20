@@ -49,7 +49,7 @@ This project is built with a modern, containerized architecture to ensure reliab
 
 ## 🎮 How to Play
 
-1.  Visit the game website: **[your-game-url.com](https://muschairs.com)**
+1.  Visit the game website: **[muschairs.com](https://muschairs.com)**
 2.  Connect your Web3 wallet (e.g., MetaMask).
 3.  Ensure you are on the correct network (the required Chain ID will be displayed on the page).
 4.  Click "Join Game" and follow the prompts to participate!
