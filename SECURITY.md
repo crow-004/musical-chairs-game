@@ -34,6 +34,31 @@ Please include the requested information listed below (as much as you can provid
 
 We do not have a formal, public bug bounty program at this time. However, we highly value the contributions of security researchers.
 
+## Contributor Roles & Permissions
+
+To maintain a secure and well-managed environment, specific roles with limited permissions are assigned to core contributors.
+
+### Server Architect (Discord)
+
+This role is assigned to trusted community members responsible for setting up and maintaining the structure and security of our Discord server.
+
+**Granted Permissions:**
+- `Manage Channels`: To create, edit, and organize server channels and categories.
+- `Manage Roles`: To create and assign roles for community gamification and moderation.
+- `Manage Webhooks`: To integrate bots for announcements and updates.
+- `Manage Messages` & `Manage Threads`: For moderation and keeping discussions organized.
+- `Manage Emojis and Stickers`: To add custom server branding.
+- `View Audit Log`: To track changes and assist in debugging server settings.
+
+**Denied Permissions (for security):**
+- `Administrator`: This permission is reserved exclusively for the project founder.
+- `Manage Server`: Prevents changes to core server settings or server deletion.
+- `Kick/Ban Members`: Member management is handled by the core team.
+- `Moderate Members`: Prevents managing other users' profiles or voice states.
+- `Mention @everyone`: Prevents mass notifications.
+
+We do not have a formal, public bug bounty program at this time. However, we highly value the contributions of security researchers.
+
 **Rewards for valid and previously unreported vulnerabilities are awarded at our sole discretion.** The amount will be based on the severity, impact, and quality of the report. Please note that a report does not guarantee a reward.
 
 Thank you for helping keep Musical Chairs secure!
