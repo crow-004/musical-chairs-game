@@ -38,6 +38,18 @@ We do not have a formal, public bug bounty program at this time. However, we hig
 
 To maintain a secure and well-managed environment, specific roles with limited permissions are assigned to core contributors.
 
+### Advisor
+
+This role is assigned to strategic partners who provide guidance on growth, marketing, and project direction. It is a role of status and communication, not technical administration.
+
+**Granted Permissions:**
+- `Display role members separately`: To make the advisor visible to the community.
+- `Create Invite`: To help grow the community.
+- Standard communication permissions (e.g., `Embed Links`, `Speak`).
+
+**Denied Permissions (for security):**
+- All administrative and moderation permissions, including `Administrator`, `Manage Server`, `Manage Channels`, `Manage Roles`, and `Kick/Ban Members`, are denied.
+
 ### Server Architect (Discord)
 
 This role is assigned to trusted community members responsible for setting up and maintaining the structure and security of our Discord server.
