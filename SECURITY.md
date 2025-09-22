@@ -52,6 +52,18 @@ This role is assigned to strategic partners who provide guidance on growth, mark
 
 ### Server Architect (Discord)
 
+This is a functional role with specific technical permissions required to manage the Discord server's structure.
+
+### Lead Contributor
+
+This is a status role assigned to recognize key community members who have made significant contributions. It grants visibility but no administrative permissions.
+
+**Granted Permissions:**
+- `Display role members separately`: To make the contributor visible to the community.
+
+**Denied Permissions (for security):**
+- All administrative and moderation permissions are denied for this role. Technical permissions are granted via separate, functional roles (e.g., `Server Architect`).
+
 This role is assigned to trusted community members responsible for setting up and maintaining the structure and security of our Discord server.
 
 **Granted Permissions:**
