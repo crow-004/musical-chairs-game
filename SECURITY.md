@@ -36,6 +36,12 @@ We do not have a formal, public bug bounty program at this time. However, we hig
 
 ## Contributor Roles & Permissions
 
+The server follows a strict role hierarchy. The **Server Owner** has ultimate control and is not subject to the role permissions below. All other roles are positioned below the Owner and cannot modify roles at or above their own level.
+
+The order of roles is critical for security. Higher-level roles (e.g., `Advisor`) are placed above functional roles (e.g., `Server Architect`) in the hierarchy.
+
+---
+
 To maintain a secure and well-managed environment, specific roles with limited permissions are assigned to core contributors.
 
 ### Advisor
@@ -80,6 +86,11 @@ This role is assigned to trusted community members responsible for setting up an
 - `Kick/Ban Members`: Member management is handled by the core team.
 - `Moderate Members`: Prevents managing other users' profiles or voice states.
 - `Mention @everyone`: Prevents mass notifications.
+
+**Security Note on Role Hierarchy:**
+A key security feature of Discord is its role hierarchy. A user with the `Manage Roles` permission can only grant permissions they themselves possess, and can only manage roles that are positioned lower than their own highest role.
+
+This means that even with `Manage Roles`, the `Server Architect` cannot grant `Administrator` permissions or edit their own role, ensuring that privilege escalation is not possible.
 
 We do not have a formal, public bug bounty program at this time. However, we highly value the contributions of security researchers.
 
