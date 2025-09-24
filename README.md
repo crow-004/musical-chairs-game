@@ -60,15 +60,19 @@ This project is being built with the help of a dedicated team of advisors and co
 To protect yourself from scams, please only use the official links provided below.
 
 - **Website:** [muschairs.com](https://muschairs.com)
+- **Test Site:** [test.muschairs.com](https://test.muschairs.com)
 - **Discord:** [discord.gg/wnnJKjgfZW](https://discord.gg/wnnJKjgfZW)
 - **Telegram:** [t.me/muschairs](https://t.me/muschairs)
 - **X (Twitter):** [Link will be added soon]
 - **Smart Contracts Repo:** [github.com/crow-004/musical-chairs-contracts](https://github.com/crow-004/musical-chairs-contracts)
+- **Mainnet Contract (Arbitrum):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
+- **Testnet Contract (Arbitrum Sepolia):** `0x5Af9Ed30A64DB9ED1AE31e9c6D4215A9ED173040`
 - **DappRadar:** [dappradar.com/dapp/musical-chairs](https://dappradar.com/dapp/musical-chairs)
 - **DefiLlama:** [defillama.com/protocol/musical-chairs](https://defillama.com/protocol/musical-chairs)
 - **Zealy Campaign:** [zealy.io/c/musicalchairsclub](https://zealy.io/c/musicalchairsclub)
 - **Medium:** [medium.com/@crow004](https://medium.com/@crow004)
 - **Dev.to:** [dev.to/crow004](https://dev.to/crow004)
+- **Support Email:** [support@muschairs.com](mailto:support@muschairs.com)
 
 ---
 
