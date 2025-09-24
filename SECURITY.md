@@ -8,7 +8,7 @@ The Musical Chairs team takes the security of our game and smart contracts serio
 
 **Please do not report security vulnerabilities through public GitHub issues, Discord, or other public channels.**
 
-Instead, please report them to our dedicated security email address: **crow004@protonmail.com**.
+Instead, please report them to our dedicated security email address: **security@muschairs.com**.
 
 If possible, encrypt your message with a PGP key if you have one.
 
