@@ -36,7 +36,7 @@ Our smart contracts are fully open-source. If you are a Solidity developer and w
 4.  Ensure all existing tests pass.
 5.  Open a Pull Request with a clear description of the changes you've made.
 
-*Please note that the backend and frontend source code are currently proprietary.*
+*Please note: The backend and frontend source code are currently proprietary to protect our unique implementation and business logic during this early stage. We believe this hybrid approach provides the best of both worlds: on-chain trust and off-chain competitive advantage.*
 
 ## Code of Conduct
 
