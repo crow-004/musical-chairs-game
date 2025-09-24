@@ -18,11 +18,18 @@ This repository serves as the main hub for the Musical Chairs project, including
 
 - [Key Features](#-key-features)
 - [Open Source Commitment](#️-open-source-commitment)
+- [Official Links](#-official-links)
 - [Technology Stack](#-technology-stack)
 - [How to Play](#-how-to-play)
 - [Feedback and Bug Reports](#-feedback-and-bug-reports)
 - [License](#️-license)
 - [Core Contributors](#-core-contributors)
+
+---
+
+## 🚀 As Seen On
+
+*This section will be updated as we get listed on various Web3 platforms and game directories.*
 
 ---
 
@@ -45,6 +52,23 @@ This project is being built with the help of a dedicated team of advisors and co
 - **Secure Authentication:** Players sign messages with their wallets to join, no password required.
 - **Referral System:** On-chain referral tracking.
 - **Full Stack:** A complete application showcasing a robust backend, interactive frontend, and secure smart contracts.
+
+---
+
+## 🔗 Official Links
+
+To protect yourself from scams, please only use the official links provided below.
+
+- **Website:** [muschairs.com](https://muschairs.com)
+- **Discord:** [discord.gg/wnnJKjgfZW](https://discord.gg/wnnJKjgfZW)
+- **Telegram:** [t.me/muschairs](https://t.me/muschairs)
+- **X (Twitter):** [Link will be added soon]
+- **Smart Contracts Repo:** [github.com/crow-004/musical-chairs-contracts](https://github.com/crow-004/musical-chairs-contracts)
+- **DappRadar:** [dappradar.com/dapp/musical-chairs](https://dappradar.com/dapp/musical-chairs)
+- **DefiLlama:** [defillama.com/protocol/musical-chairs](https://defillama.com/protocol/musical-chairs)
+- **Zealy Campaign:** [zealy.io/c/musicalchairsclub](https://zealy.io/c/musicalchairsclub)
+- **Medium:** [medium.com/@crow004](https://medium.com/@crow004)
+- **Dev.to:** [dev.to/crow004](https://dev.to/crow004)
 
 ---
 
