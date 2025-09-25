@@ -10,22 +10,24 @@ Musical Chairs: Public Roadmap
 ### Q4 2025: Ecosystem Integration & Engagement
 
 *   **Arbitrum Portal Listing:** Securing a spot on the official Arbitrum Portal to increase visibility and trust.
+*   **Game Directory Listings:** ✅ Done
+    *   Submitted to PlayToEarn.com for review.
 *   **Leaderboards & Stats:** Introducing all-time, monthly, and daily leaderboards.
 *   **Community Tournaments:** Organizing the first community-led tournaments with ETH prize pools.
 *   **Contribution System:** Formalizing and launching the "Contribution Points System" to reward active community members.
+*   **Farcaster Integration:** Building a presence on Farcaster and exploring the creation of a "Frame" for community engagement.
 
 ### Q1 2026: Economic & Legal Framework
 
 *   **Tokenomics Design:** Releasing the first version of the project's tokenomics and utility model (Whitepaper v1).
-*   **Legal Structure:** Establishing a formal legal entity to support the project's long-term growth and decentralization.
-*   **Seed Funding:** Exploring strategic seed funding options with value-add investors.
+*   **Legal Structure:** Establishing a formal legal entity (e.g., in a crypto-friendly jurisdiction) to support the project's long-term growth and decentralization.
 
 ### Q2 2026: Token Launch & Expansion
 
 *   **Token Generation Event (TGE):** Issuing the official project token on Arbitrum.
 *   **Airdrop:** Distributing tokens to early users based on the Contribution Points System.
 *   **Staking & Utility:** Launching the first staking mechanism, allowing token holders to earn a share of platform commissions.
-*   **DEX Listing:** Providing initial liquidity on a leading decentralized exchange.
+*   **DEX Listing:** Providing initial liquidity on a leading decentralized exchange (DEX).
 
 ### Q3 2026 & Beyond: Scaling the Ecosystem
 
