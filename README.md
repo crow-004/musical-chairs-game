@@ -145,6 +145,21 @@ To protect yourself from scams, please only use the official links provided belo
         </a>
       </td>
     </tr>
+    <tr>
+      <td align="center">
+        <a href="https://farcaster.xyz/crow004" target="_blank" rel="noopener noreferrer">
+          <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-farcaster.svg" width="40px" alt="Farcaster"/><br/>
+          Farcaster
+        </a>
+      </td>
+      </td>
+      <td align="center">
+        <!-- Empty cell for alignment -->
+      </td>
+      <td align="center">
+        <!-- Empty cell for alignment -->
+      </td>
+    </tr>
   </tbody>
 </table>
 
