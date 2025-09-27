@@ -27,6 +27,7 @@ Musical Chairs: Public Roadmap
 ### Q2 2026: Token Launch & Expansion
 
 *   **Token Generation Event (TGE):** Issuing the official project token on Arbitrum.
+*   **Vesting Contract Deployment:** Setting up and funding on-chain vesting contracts for advisors and team members according to their agreements.
 *   **Airdrop:** Distributing tokens to early users based on the Contribution Points System.
 *   **Staking & Utility:** Launching the first staking mechanism, allowing token holders to earn a share of platform commissions.
 *   **DEX Listing:** Providing initial liquidity on a leading decentralized exchange (DEX).
