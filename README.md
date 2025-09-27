@@ -20,6 +20,7 @@ This repository serves as the main hub for the Musical Chairs project, including
 - [Open Source Commitment](#️-open-source-commitment)
 - [Official Links](#-official-links)
 - [As Seen On](#-as-seen-on)
+- [Roadmap](https://github.com/crow-004/musical-chairs-game/blob/main/ROADMAP.md)
 - [Technology Stack](#️-technology-stack)
 - [How to Play](#-how-to-play)
 - [Feedback and Bug Reports](#-feedback-and-bug-reports)
