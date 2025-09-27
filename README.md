@@ -152,6 +152,14 @@ To protect yourself from scams, please only use the official links provided belo
           Farcaster
         </a>
       </td>
+      <td align="center">
+        <a href="https://dune.com/crow004/musical-chairs-game-analytics" target="_blank" rel="noopener noreferrer">
+          <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-dune.svg" width="40px" alt="Dune Analytics"/><br/>
+          Dune
+        </a>
+      </td>
+      <td align="center">
+        <!-- Empty cell for alignment -->
       </td>
       <td align="center">
         <!-- Empty cell for alignment -->
@@ -186,6 +194,9 @@ Musical Chairs is recognized and listed on the following platforms.
   </a>
   <a href="https://defillama.com/protocol/musical-chairs" target="_blank" rel="noopener noreferrer">
     <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/logo-defillama.svg" width="200px" alt="Listed on DefiLlama"/>
+  </a>
+  <a href="https://dune.com/crow004/musical-chairs-game-analytics" target="_blank" rel="noopener noreferrer">
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/logo-dune.svg" width="200px" alt="Analytics on Dune"/>
   </a>
 </div>
 
