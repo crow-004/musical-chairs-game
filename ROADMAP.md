@@ -15,8 +15,9 @@ Musical Chairs: Public Roadmap
 *   **Leaderboards & Stats:** Introducing all-time, monthly, and daily leaderboards.
 *   **Community Tournaments:** Organizing the first community-led tournaments with ETH prize pools.
 *   **Contribution System:** Formalizing and launching the "Contribution Points System" to reward active community members.
+*   **Advisor Onboarding:** ✅ Done: Formalizing relationships with key growth and community advisors.
 *   **Farcaster Integration:** Building a presence on Farcaster and exploring the creation of a "Frame" for community engagement.
-*   **Public Analytics:** ⏳ In Progress: Creating a public Dune Analytics dashboard to track key on-chain metrics (total games, volume, unique players).
+*   **Public Analytics:** ✅ Done: Created a public Dune Analytics dashboard to track key on-chain metrics (total games, volume, unique players).
 
 ### Q1 2026: Economic & Legal Framework
 
