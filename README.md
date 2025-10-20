@@ -25,18 +25,13 @@ This repository serves as the main hub for the Musical Chairs project, including
 - [How to Play](#-how-to-play)
 - [Feedback and Bug Reports](#-feedback-and-bug-reports)
 - [License](#️-license)
-- [Core Contributors](#-core-contributors)
 
 
 ---
 
-## 🤝 Team & Advisors
+## 🤝 Core Contributors
 
-This project is being built with the help of a dedicated team of advisors and community leaders.
-
-*   **NEXXUS** - *Growth Advisor*
-    *   A seasoned Web3 growth strategist helping to shape our marketing, community, and go-to-market strategy.
-
+This project is being built with the help of a dedicated team of community leaders.
 *   **DeFiEminent** - *Lead Contributor & Community Builder*
     *   Responsible for architecting our Discord server, structuring the rewards program, and fostering a vibrant, engaged player base.
 
