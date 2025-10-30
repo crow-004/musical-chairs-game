@@ -12,10 +12,10 @@ Musical Chairs: Public Roadmap
 *   **Arbitrum Portal Listing:** Securing a spot on the official Arbitrum Portal to increase visibility and trust.
 *   **Game Directory Listings:** ✅ Done
     *   Submitted to PlayToEarn.com for review.
-*   **Leaderboards & Stats:** Introducing all-time, monthly, and daily leaderboards.
-*   **Community Tournaments:** Organizing the first community-led tournaments with ETH prize pools.
+*   **Leaderboards & Stats:** ✅ Done: Introducing all-time and daily leaderboards.
+*   **Community Tournaments:** ✅ Done: Organizing the first community-led tournaments with ETH prize pools.
 *   **Contribution System:** Formalizing and launching the "Contribution Points System" to reward active community members.
-*   **Marketing Kick-off:** Launching initial marketing and bounty campaigns on platforms like X and BitcoinTalk, powered by our Contribution Points System.
+*   **Marketing Kick-off:** ✅ Done: Launching initial marketing and bounty campaigns on platforms like X and BitcoinTalk, powered by our Contribution Points System.
 *   **Advisor Onboarding:** ✅ Done: Formalizing relationships with key growth and community advisors.
 *   **Farcaster Integration:** ✅ Done: Launched an interactive Frame for real-time on-chain stats.
 *   **Public Analytics:** ✅ Done: Created a public Dune Analytics dashboard to track key on-chain metrics (total games, volume, unique players).
