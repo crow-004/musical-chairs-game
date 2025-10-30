@@ -15,7 +15,7 @@ Musical Chairs: Public Roadmap
 *   **Leaderboards & Stats:** ✅ Done: Introducing all-time and daily leaderboards.
 *   **Community Tournaments:** ✅ Done: Organizing the first community-led tournaments with ETH prize pools.
 *   **Contribution System:** Formalizing and launching the "Contribution Points System" to reward active community members.
-*   **Marketing Kick-off:** ✅ Done: Launching initial marketing and bounty campaigns on platforms like X and BitcoinTalk, powered by our Contribution Points System.
+*   **Marketing Kick-off:** ✅ Done: Launch of the first paid marketing and bounty campaigns on the X platform.
 *   **Advisor Onboarding:** ✅ Done: Formalizing relationships with key growth and community advisors.
 *   **Farcaster Integration:** ✅ Done: Launched an interactive Frame for real-time on-chain stats.
 *   **Public Analytics:** ✅ Done: Created a public Dune Analytics dashboard to track key on-chain metrics (total games, volume, unique players).
