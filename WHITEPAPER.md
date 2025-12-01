@@ -168,10 +168,10 @@ Musical Chairs was founded by **Crow**, a solo full-stack developer. The project
 
 ### **11. Tokenomics (Draft v0.2)**
 
-*   Team & Founder: 20%
+*   Team & Founder: 25%
 *   Advisors: 5%
 *   Seed Round Investors: 15%
-*   Community & Airdrop: 30%
+*   Community & Airdrop: 25%
 *   Treasury / Ecosystem Fund: 30%
 
 *(Note: This is our current allocation plan and may be subject to minor adjustments as we finalize the whitepaper.)*
@@ -227,5 +227,6 @@ The contents of this repository (documentation, issues, etc.) are available for 
 ---
 
 ### 16. Conclusion
+
 
 Musical Chairs is more than just a game; it's a demonstration of how blockchain technology can be used to create engaging, transparent, and sustainable entertainment experiences. By focusing on accessibility, community-driven growth, and robust security, we aim to onboard a new generation of users to the Arbitrum ecosystem and redefine the future of Web3 gaming.
