@@ -21,7 +21,7 @@ This repository serves as the main hub for the Musical Chairs project, including
 - [Open Source Commitment](#️-open-source-commitment)
 - [Official Links](#-official-links)
 - [As Seen On](#-as-seen-on)
-- [Roadmap](#-musical-chairs-public-roadmap)
+- [Roadmap](https://github.com/crow-004/musical-chairs-game/blob/main/ROADMAP.md)
 - [Technology Stack](#️-technology-stack)
 - [How to Play](#-how-to-play)
 - [Feedback and Bug Reports](#-feedback-and-bug-reports)
@@ -170,7 +170,7 @@ This project is built with a modern, containerized architecture to ensure reliab
 
 ## 🎮 How to Play
 
-1.  Visit the game website: **[muschairs.com](https://muschairs.com)**
+1.  Visit the game websites: **[muschairs.com](https://muschairs.com)** or **[base.muschairs.com](https://base.muschairs.com)**
 2.  Connect your Web3 wallet (e.g., MetaMask).
 3.  Ensure you are on the correct network (the required Chain ID will be displayed on the page).
 4.  Click "Join Game" and follow the prompts to participate!
