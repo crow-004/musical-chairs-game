@@ -222,6 +222,13 @@ To protect yourself from scams, please only use the official links provided belo
 *   **DappRadar:** [dappradar.com/dapp/musical-chairs](https://dappradar.com/dapp/musical-chairs)
 *   **DefiLlama:** [defillama.com/protocol/musical-chairs](https://defillama.com/protocol/musical-chairs)
 *   **Dune Analytics:** [dune.com/crow004/musical-chairs-game-analytics](https://dune.com/crow004/musical-chairs-game-analytics)
+*   **Crunchbase:** [crunchbase.com/organization/musical-chairs](https://www.crunchbase.com/organization/musical-chairs)
+*   **Blog:** [muschairs.blogspot.com](https://muschairs.blogspot.com)
+*   **Google Sites:** [sites.google.com/view/muschairs](https://sites.google.com/view/muschairs/)
+*   **Vercel Mirror:** [muschairs-promo.vercel.app](https://muschairs-promo.vercel.app/)
+*   **Netlify Mirror:** [muschairs-promo.netlify.app](https://muschairs-promo.netlify.app/)
+*   **IPFS:** [View on IPFS](https://amber-active-sailfish-612.mypinata.cloud/ipfs/bafkreiattrzmzkkuf3mnzihxpg4y3qbumgarqp5pys4kmql65toydnrpka)
+*   **Arweave:** [View on Arweave](https://nn2tlvyer6qgnhcojao5ptxmut6bgyhfe7im7fp3zdmxjr5oasqq.arweave.net/a3U11wSPoGacTkgd187spPwTYOUn0M-V-8jZdMeuBKE)
 
 The contents of this repository (documentation, issues, etc.) are available for the community. The smart contract source code is released under the **MIT License**. The backend and frontend source code is proprietary and all rights are reserved.
 
