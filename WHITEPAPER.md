@@ -6,7 +6,7 @@
 
 ### **Abstract**
 
-Musical Chairs is a real-time, on-chain game of speed, strategy, and survival deployed on the Arbitrum network. Inspired by the universally understood childhood game and the daily rush for a seat on the metro, it distills a moment of competitive thrill into a simple, fast, and transparently fair Web3 experience.
+Musical Chairs is a real-time, on-chain game of speed, strategy, and survival deployed on the Arbitrum and Base networks. Inspired by the universally understood childhood game and the daily rush for a seat on the metro, it distills a moment of competitive thrill into a simple, fast, and transparently fair Web3 experience.
 
 The game operates on a zero-sum, player-funded economic model, ensuring sustainability and avoiding the inflationary pressures common in many GameFi projects. With a focus on security, transparency, and community-driven growth, Musical Chairs aims to be a sandbox for Web3 mass adoption, proving that blockchain gaming can be both fun and economically sound.
 
@@ -47,7 +47,7 @@ The result is Musical Chairs: a game that transforms a simple, real-world moment
 The project is built with a modern, containerized architecture to ensure reliability, security, and scalability.
 
 *   **Backend:** Written in **Go**, handling all real-time game logic, user sessions, and WebSocket communication. The source code is currently proprietary to protect our unique implementation.
-*   **Smart Contracts:** **Solidity** contracts deployed on the Arbitrum network manage the core game rules, fund management, and referral logic. In the spirit of Web3, all smart contracts are **open-source (MIT License)** and verified on-chain. You can review the code in our [contracts repository](https://github.com/crow-004/musical-chairs-contracts).
+*   **Smart Contracts:** **Solidity** contracts deployed on the Arbitrum and Base networks manage the core game rules, funds, and referral logic. In the spirit of Web3, all smart contracts are **open-source (MIT License)** and verified on-chain. You can review the code in our [contracts repository](https://github.com/crow-004/musical-chairs-contracts).
 *   **Frontend:** Built with vanilla **JavaScript, HTML, and CSS** for a lightweight, fast, and universally responsive user experience.
 *   **Infrastructure:** The entire application is containerized using **Docker** and orchestrated with **Docker Compose**, running behind an **Nginx** reverse proxy for security and performance.
 
@@ -67,7 +67,7 @@ The project is built with a modern, containerized architecture to ensure reliabi
 
 The gameplay loop is designed to be intuitive and fast, with each game session lasting under 15 minutes.
 
-1.  **Connect & Join:** Players connect their Web3 wallet (e.g., MetaMask) to the application on the Arbitrum network. Clicking "Join Game" places the player in a waiting room.
+1.  **Connect & Join:** Players connect their Web3 wallet (e.g., MetaMask) to the application on the Arbitrum or Base network. Clicking "Join Game" places the player in a waiting room.
 2.  **Game Creation:** A new game is created on-chain when 5 players are in the waiting room, or if a timer expires with at least 2 players.
 3.  **Deposit Stake:** Once the game is created, participants have a limited time to deposit the fixed stake of 0.002 ETH into the smart contract.
 4.  **The Round:** When all players have deposited, the music starts. When it stops, a "CLICK!" button appears. The last player to click is eliminated. The backend server determines the loser based on reaction time to ensure a real-time experience.
@@ -143,7 +143,7 @@ To bootstrap community growth, we have implemented a fully on-chain referral sys
 
 ### Q3 2026 & Beyond: Scaling the Ecosystem
 
-*   **Multi-Chain Deployment:** Exploring deployment to other EVM-compatible networks (e.g., Base, Optimism, BSC).
+*   **Multi-Chain Deployment:** Exploring deployment to other EVM-compatible networks (e.g., Optimism, BSC).
     *   *Note: Keeping an eye on emerging Bitcoin L2s like Hemi Network for future expansion.*
 *   **Major Partnership:** Securing a strategic collaboration with a major project in the Web3 gaming or infrastructure space.
 *   **CEX Listing:** Initiating conversations for listing on a reputable centralized exchange (CEX).
@@ -154,15 +154,15 @@ To bootstrap community growth, we have implemented a fully on-chain referral sys
 
 ### **10. Team & Contributors**
 
-Musical Chairs was founded by **Crow**, a solo full-stack developer. The project is being built with the help of a dedicated team of community leaders and contributors.
+Musical Chairs is an indie project was founded and developed by **Crow**, a solo full-stack developer with the support of AI and community contributors.
 
-*   **Crow:** Founder & Lead Developer
-*   **DeFiEminent:** Lead Contributor & Community Builder
+*   **Crow:** Founder & Solo Developer. Responsible for the entire stack: Backend (Go), Smart Contracts (Solidity), and Frontend.
+*   **Zyrick:** Web3 UI/UX Developer. Created the wallet selection modal and assists with interface improvements. ([X Profile](https://x.com/humblechigozie_))
 
-    *Note: This project has been built with the assistance of world-class AI tools, which have significantly accelerated development and continue to provide invaluable support.*
+    *Note: This project has been built with the assistance of world-class AI tool (Gemini), which have significantly accelerated development and continue to provide invaluable support.*
 
 
-*   **John, Endurance, Marian, and others:** Core community contributors driving marketing and community management efforts.
+*   **John:** Community contributor driving marketing and community management efforts.
 
 ---
 
@@ -213,6 +213,7 @@ This document is for informational purposes only and does not constitute financi
 To protect yourself from scams, please only use the official links provided below.
 
 *   **Website:** [muschairs.com](https://muschairs.com)
+*   **Base Network:** [base.muschairs.com](https://base.muschairs.com)
 *   **Discord:** [discord.gg/wnnJKjgfZW](https://discord.gg/wnnJKjgfZW)
 *   **Telegram:** [t.me/muschairs](https://t.me/muschairs)
 *   **X (Twitter):** [x.com/muschairs](https://x.com/muschairs)
@@ -227,6 +228,5 @@ The contents of this repository (documentation, issues, etc.) are available for 
 ---
 
 ### 16. Conclusion
-
 
 Musical Chairs is more than just a game; it's a demonstration of how blockchain technology can be used to create engaging, transparent, and sustainable entertainment experiences. By focusing on accessibility, community-driven growth, and robust security, we aim to onboard a new generation of users to the Arbitrum ecosystem and redefine the future of Web3 gaming.
