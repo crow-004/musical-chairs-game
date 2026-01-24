@@ -114,19 +114,19 @@ Musical Chairs is recognized and listed on the following platforms.
 
 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
   <a href="https://www.producthunt.com/products/musical-chairs/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_product_dark.svg" height="54" alt="Product Hunt"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/badge_product_dark.svg" height="54" alt="Product Hunt"/>
   </a>
   <a href="https://startuptrusted.com?ref=muschairs.com" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_startuptrusted.svg" height="54" alt="StartupTrusted"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/badge_startuptrusted.svg" height="54" alt="StartupTrusted"/>
   </a>
   <a href="https://launchigniter.com/product/musical-chairs?ref=badge-musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_launchigniter.svg" height="54" alt="LaunchIgniter"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/badge_launchigniter.svg" height="54" alt="LaunchIgniter"/>
   </a>
   <a href="https://viberank.dev/apps/Musical%20Chairs" target="_blank" rel="noopener noreferrer">
     <img src="https://viberank.dev/badge?app=Musical%20Chairs&theme=dark" height="54" alt="VibeRank"/>
   </a>
   <a href="https://peerpush.net/p/musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_peerpush.png" height="54" alt="PeerPush"/>
+    <img src="https://github.com/crow-004/musical-chairs-game/blob/0a04cec841eb81cd24d021e41a178e9df51267c8/docs/images/badge_peerpush.png" height="54" alt="PeerPush"/>
   </a>
 </div>
 
