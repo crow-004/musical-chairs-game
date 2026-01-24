@@ -84,12 +84,14 @@ To protect yourself from scams, please only use the official links provided belo
       <td align="center"><a href="https://dappradar.com/dapp/musical-chairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-dappradar.svg" width="40px" alt="DappRadar"/><br/>DappRadar</a></td>
       <td align="center"><a href="https://defillama.com/protocol/musical-chairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-defillama.svg" width="40px" alt="DefiLlama"/><br/>DefiLlama</a></td>
       <td align="center"><a href="https://dune.com/crow004/musical-chairs-game-analytics" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-dune.svg" width="40px" alt="Dune Analytics"/><br/>Dune</a></td>
+      <td align="center"><a href="https://www.crunchbase.com/organization/musical-chairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-crunchbase.svg" width="40px" alt="Crunchbase"/><br/>Crunchbase</a></td>
     </tr>
     <tr>
       <th align="left">Code & Articles</th>
       <td align="center"><a href="https://github.com/crow-004/musical-chairs-game" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-github.svg" width="40px" alt="GitHub"/><br/>GitHub</a></td>
       <td align="center"><a href="https://medium.com/@crow004" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-medium.svg" width="40px" alt="Medium"/><br/>Medium</a></td>
       <td align="center"><a href="https://dev.to/crow004" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-devto.svg" width="40px" alt="Dev.to"/><br/>Dev.to</a></td>
+      <td align="center"><a href="https://muschairs.blogspot.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-blogspot.svg" width="40px" alt="Blog"/><br/>Blog</a></td>
     </tr>
   </tbody>
 </table>
@@ -97,12 +99,22 @@ To protect yourself from scams, please only use the official links provided belo
 <details>
 <summary>On-Chain & Contact Details</summary>
 
-- **Test Site:** test.muschairs.com
-- **Smart Contracts Repo:** github.com/crow-004/musical-chairs-contracts
+- **Smart Contracts Repo:** https://github.com/crow-004/musical-chairs-contracts
 - **Mainnet Contract (Arbitrum):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Mainnet Contract (Base):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Testnet Contract (Arbitrum Sepolia):** `0x5Af9Ed30A64DB9ED1AE31e9c6D4215A9ED173040`
 - **Support Email:** support@muschairs.com
+
+</details>
+
+<details>
+<summary>Mirrors & Landing Pages</summary>
+
+- **Google Sites:** [sites.google.com/view/muschairs](https://sites.google.com/view/muschairs/)
+- **Vercel Mirror:** [muschairs-promo.vercel.app](https://muschairs-promo.vercel.app/)
+- **Netlify Mirror:** [muschairs-promo.netlify.app](https://muschairs-promo.netlify.app/)
+- **IPFS (Decentralized):** [View on IPFS](https://amber-active-sailfish-612.mypinata.cloud/ipfs/bafkreiattrzmzkkuf3mnzihxpg4y3qbumgarqp5pys4kmql65toydnrpka)
+- **Arweave (Permanent Web):** [View on Arweave](https://nn2tlvyer6qgnhcojao5ptxmut6bgyhfe7im7fp3zdmxjr5oasqq.arweave.net/a3U11wSPoGacTkgd187spPwTYOUn0M-V-8jZdMeuBKE)
 
 </details>
 
