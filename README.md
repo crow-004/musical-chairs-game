@@ -114,13 +114,13 @@ Musical Chairs is recognized and listed on the following platforms.
 
 <div style="display: flex; align-items: center; gap: 2rem;">
   <a href="https://dappradar.com/dapp/musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/logo-dappradar.svg" width="200px" alt="Listed on DappRadar"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-dappradar.svg" width="200px" alt="Listed on DappRadar"/>
   </a>
   <a href="https://defillama.com/protocol/musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/logo-defillama.svg" width="200px" alt="Listed on DefiLlama"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-defillama.svg" width="200px" alt="Listed on DefiLlama"/>
   </a>
   <a href="https://dune.com/crow004/musical-chairs-game-analytics" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/logo-dune.svg" width="200px" alt="Analytics on Dune"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-dune.svg" width="200px" alt="Analytics on Dune"/>
   </a>
 </div>
 
