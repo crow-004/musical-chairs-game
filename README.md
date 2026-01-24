@@ -10,7 +10,8 @@ This repository serves as the main hub for the Musical Chairs project, including
 
 ## ▶️ Play the Game
 
-**[Click here to play Musical Chairs!](https://muschairs.com)**
+**[Play on Arbitrum (muschairs.com)](https://muschairs.com)**
+**[Play on Base (base.muschairs.com)](https://base.muschairs.com)**
 
 ---
 
@@ -29,11 +30,17 @@ This repository serves as the main hub for the Musical Chairs project, including
 
 ---
 
-## 🤝 Core Contributors
+## 🤝 Team & Contributors
 
-This project is being built with the help of a dedicated team of community leaders.
-*   **DeFiEminent** - *Lead Contributor & Community Builder*
-    *   Responsible for architecting our Discord server, structuring the rewards program, and fostering a vibrant, engaged player base.
+Musical Chairs is a solo-developed project by **Crow**, built with the assistance of advanced AI.
+
+*   **Crow** - *Founder & Solo Developer*
+    *   Designed and built the entire architecture: Backend (Go), Smart Contracts (Solidity), and Frontend (JS/HTML/CSS).
+*   **Gemini (AI)** - *Lead Technical Co-pilot*
+    *   Wrote the majority of the code under Crow's direction, handling technical implementation across the full stack.
+*   **Zyrick** - *Web3 UI/UX Developer*
+    *   Developed the wallet connection modal and contributes to UI/UX improvements.
+    *   [X (@humblechigozie_)](https://x.com/humblechigozie_) | Telegram: @zyrick_x | Discord: 0xzyrick
 
 ---
 
@@ -51,11 +58,14 @@ This project is being built with the help of a dedicated team of community leade
 
 To protect yourself from scams, please only use the official links provided below.
 
+**[🔗 All Official Links (Linktree)](https://muschairs.com/links.html)**
+
 <table style="width:100%; border: none;">
   <tbody>
     <tr>
       <th align="left" width="140px">Play</th>
       <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-website.svg" width="40px" alt="Website"/><br/>Website</a></td>
+      <td align="center" width="100px"><a href="https://base.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-website.svg" width="40px" alt="Website"/><br/>Base</a></td>
       <td align="center" width="100px"><a href="https://test.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-test-website.svg" width="40px" alt="Testnet"/><br/>Testnet</a></td>
     </tr>
     <tr>
@@ -63,7 +73,6 @@ To protect yourself from scams, please only use the official links provided belo
       <td align="center"><a href="https://discord.gg/wnnJKjgfZW" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-discord.svg" width="40px" alt="Discord"/><br/>Discord</a></td>
       <td align="center"><a href="https://t.me/muschairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-telegram.svg" width="40px" alt="Telegram"/><br/>Telegram</a></td>
       <td align="center"><a href="https://x.com/muschairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-x.svg" width="40px" alt="X (Twitter)"/><br/>X (Twitter)</a></td>
-      <td align="center"><a href="https://youtube.com/@muschairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-youtube.svg" width="40px" alt="YouTube"/><br/>YouTube</a></td>
       <td align="center"><a href="https://farcaster.xyz/crow004" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-farcaster.svg" width="40px" alt="Farcaster"/><br/>Farcaster</a></td>
       <td align="center"><a href="https://bsky.app/profile/crow004.bsky.social" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-bluesky.svg" width="40px" alt="Bluesky"/><br/>Bluesky</a></td>
       <td align="center"><a href="https://zealy.io/c/musicalchairsclub" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-zealy.svg" width="40px" alt="Zealy"/><br/>Zealy</a></td>
@@ -91,6 +100,7 @@ To protect yourself from scams, please only use the official links provided belo
 - **Test Site:** test.muschairs.com
 - **Smart Contracts Repo:** github.com/crow-004/musical-chairs-contracts
 - **Mainnet Contract (Arbitrum):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
+- **Mainnet Contract (Base):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Testnet Contract (Arbitrum Sepolia):** `0x5Af9Ed30A64DB9ED1AE31e9c6D4215A9ED173040`
 - **Support Email:** support@muschairs.com
 
