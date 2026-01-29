@@ -64,8 +64,9 @@ To protect yourself from scams, please only use the official links provided belo
   <tbody>
     <tr>
       <th align="left" width="140px">Play</th>
-      <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-website.svg" width="40px" alt="Website"/><br/>Arbitrum</a></td>
-      <td align="center" width="100px"><a href="https://base.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-website.svg" width="40px" alt="Website"/><br/>Base</a></td>
+      <td align="center" width="100px"><a href="https://eth.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-ethereum.svg" width="40px" alt="Ethereum"/><br/>Ethereum</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-arbitrum.svg" width="40px" alt="Arbitrum"/><br/>Arbitrum</a></td>
+      <td align="center" width="100px"><a href="https://base.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-base.svg" width="40px" alt="Base"/><br/>Base</a></td>
       <td align="center" width="100px"><a href="https://test.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-test-website.svg" width="40px" alt="Testnet"/><br/>Testnet</a></td>
     </tr>
     <tr>
@@ -84,14 +85,14 @@ To protect yourself from scams, please only use the official links provided belo
       <td align="center"><a href="https://dappradar.com/dapp/musical-chairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-dappradar.svg" width="40px" alt="DappRadar"/><br/>DappRadar</a></td>
       <td align="center"><a href="https://defillama.com/protocol/musical-chairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-defillama.svg" width="40px" alt="DefiLlama"/><br/>DefiLlama</a></td>
       <td align="center"><a href="https://dune.com/crow004/musical-chairs-game-analytics" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-dune.svg" width="40px" alt="Dune Analytics"/><br/>Dune</a></td>
-      <td align="center"><a href="https://www.crunchbase.com/organization/musical-chairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-crunchbase.svg" width="40px" alt="Crunchbase"/><br/>Crunchbase</a></td>
+      <td align="center"><a href="https://www.crunchbase.com/organization/musical-chairs" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-crunchbase.svg" width="40px" alt="Crunchbase"/><br/>Crunchbase</a></td>
     </tr>
     <tr>
       <th align="left">Code & Articles</th>
       <td align="center"><a href="https://github.com/crow-004/musical-chairs-game" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-github.svg" width="40px" alt="GitHub"/><br/>GitHub</a></td>
       <td align="center"><a href="https://medium.com/@crow004" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-medium.svg" width="40px" alt="Medium"/><br/>Medium</a></td>
       <td align="center"><a href="https://dev.to/crow004" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-devto.svg" width="40px" alt="Dev.to"/><br/>Dev.to</a></td>
-      <td align="center"><a href="https://muschairs.blogspot.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-blogspot.svg" width="40px" alt="Blog"/><br/>Blog</a></td>
+      <td align="center"><a href="https://muschairs.blogspot.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-blogspot.svg" width="40px" alt="Blog"/><br/>Blog</a></td>
     </tr>
   </tbody>
 </table>
@@ -102,6 +103,7 @@ To protect yourself from scams, please only use the official links provided belo
 - **Smart Contracts Repo:** https://github.com/crow-004/musical-chairs-contracts
 - **Mainnet Contract (Arbitrum):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Mainnet Contract (Base):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
+- **Mainnet Contract (Ethereum):** `0x7c01A2a7e9012A98760984F2715A4517AD2c549A`
 - **Testnet Contract (Arbitrum Sepolia):** `0x5Af9Ed30A64DB9ED1AE31e9c6D4215A9ED173040`
 - **Support Email:** support@muschairs.com
 
@@ -126,19 +128,19 @@ Musical Chairs is recognized and listed on the following platforms.
 
 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
   <a href="https://www.producthunt.com/products/musical-chairs/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/badge_product_dark.svg" height="54" alt="Product Hunt"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_product_dark.svg" height="54" alt="Product Hunt"/>
   </a>
   <a href="https://startuptrusted.com?ref=muschairs.com" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/badge_startuptrusted.svg" height="54" alt="StartupTrusted"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_startuptrusted.svg" height="54" alt="StartupTrusted"/>
   </a>
   <a href="https://launchigniter.com/product/musical-chairs?ref=badge-musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/badge_launchigniter.svg" height="54" alt="LaunchIgniter"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_launchigniter.svg" height="54" alt="LaunchIgniter"/>
   </a>
   <a href="https://viberank.dev/apps/Musical%20Chairs" target="_blank" rel="noopener noreferrer">
     <img src="https://viberank.dev/badge?app=Musical%20Chairs&theme=dark" height="54" alt="VibeRank"/>
   </a>
   <a href="https://peerpush.net/p/musical-chairs" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/crow-004/musical-chairs-game/blob/0a04cec841eb81cd24d021e41a178e9df51267c8/docs/images/badge_peerpush.png" height="54" alt="PeerPush"/>
+    <img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/frontend-prod/images/badge_peerpush.png" height="54" alt="PeerPush"/>
   </a>
 </div>
 
@@ -170,7 +172,7 @@ This project is built with a modern, containerized architecture to ensure reliab
 
 ## 🎮 How to Play
 
-1.  Visit the game websites: **[muschairs.com](https://muschairs.com)** or **[base.muschairs.com](https://base.muschairs.com)**
+1.  Visit the game website: **[muschairs.com](https://muschairs.com)** or **[base.muschairs.com](https://base.muschairs.com)**
 2.  Connect your Web3 wallet (e.g., MetaMask).
 3.  Ensure you are on the correct network (the required Chain ID will be displayed on the page).
 4.  Click "Join Game" and follow the prompts to participate!
