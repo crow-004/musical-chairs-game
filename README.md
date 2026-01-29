@@ -65,8 +65,8 @@ To protect yourself from scams, please only use the official links provided belo
     <tr>
       <th align="left" width="140px">Play</th>
       <td align="center" width="100px"><a href="https://eth.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-ethereum.svg" width="40px" alt="Ethereum"/><br/>Ethereum</a></td>
-      <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-arbitrum.svg" width="40px" alt="Arbitrum"/><br/>Arbitrum</a></td>
       <td align="center" width="100px"><a href="https://base.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-base.svg" width="40px" alt="Base"/><br/>Base</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-arbitrum.svg" width="40px" alt="Arbitrum"/><br/>Arbitrum</a></td>
       <td align="center" width="100px"><a href="https://test.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-test-website.svg" width="40px" alt="Testnet"/><br/>Testnet</a></td>
     </tr>
     <tr>
