@@ -212,7 +212,8 @@ This document is for informational purposes only and does not constitute financi
 
 To protect yourself from scams, please only use the official links provided below.
 
-*   **Website:** [muschairs.com](https://muschairs.com)
+*   **Arbitrum Network:** [muschairs.com](https://muschairs.com)
+*   **Ethereum Network:** [eth.muschairs.com](https://eth.muschairs.com)
 *   **Base Network:** [base.muschairs.com](https://base.muschairs.com)
 *   **Discord:** [discord.gg/wnnJKjgfZW](https://discord.gg/wnnJKjgfZW)
 *   **Telegram:** [t.me/muschairs](https://t.me/muschairs)
