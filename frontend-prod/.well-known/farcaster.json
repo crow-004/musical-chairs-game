@@ -1,1 +1,23 @@
-
+{
+  "miniapp": {
+    "name": "Musical Chairs Game",
+    "version": "1",
+    "iconUrl": "https://muschairs.com/favicon.ico",
+    "homeUrl": "https://muschairs.com",
+    "imageUrl": "https://cdn.jsdelivr.net/gh/crow-004/musical-chairs-game@main/docs/images/banner.png",
+    "splashImageUrl": "https://muschairs.com/favicon.ico",
+    "splashBackgroundColor": "#0b0c10",
+    "subtitle": "A fun and fair on-chain game.",
+    "description": "Musical Chairs is a provably fair on-chain game with a radically accessible stake, designed for Web3 mass adoption. Live on Arbitrum.",
+    "primaryCategory": "games",
+    "tags": ["gamefi", "onchain", "arbitrum", "web3", "p2e"],
+    "ogTitle": "Musical Chairs: Web3 Sandbox",
+    "ogDescription": "A fair, fun, and accessible on-chain game, live on Arbitrum. Play now!",
+    "ogImageUrl": "https://cdn.jsdelivr.net/gh/crow-004/musical-chairs-game@main/docs/images/banner.png"
+  },
+  "accountAssociation": {
+    "header": "eyJmaWQiOjEzNTM0MDgsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhmYTdmNkI5MUQ0ZTM1QWYzMDVhNkQwQzA0QzI5ODFhRGY1MzgyNjY3In0",
+    "payload": "eyJkb21haW4iOiJtdXNjaGFpcnMuY29tIn0",
+    "signature": "fNmqsUMILtJHHO1PdoaONIALBZEnhgpfWKjFZ0NWsWBJyrC/W/OLSRPeNh5PWk1g9nRdcS4oaBXflsJAu4wOvhw="
+  }
+}
