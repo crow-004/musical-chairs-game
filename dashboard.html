@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musical Chairs - Analytics Dashboard</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://muschairs.com/dashboard.html" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="links.css" />
+    <!-- Reuse main style -->
+  </head>
+  <body class="dashboard-page">
+    <div class="container">
+      <h1 style="text-align: center">Analytics Dashboard</h1>
+      <p><a href="/">&larr; Back to Game</a></p>
+      <div class="dashboard-container">
+        <h2>Game Activity</h2>
+        <div id="game-activity-container">
+          <p>Loading game activity data...</p>
+        </div>
+        <hr />
+        <h2>Conversion Funnel</h2>
+        <div class="filter-controls">
+          <label for="funnel-start-date">From:</label>
+          <input type="date" id="funnel-start-date" />
+          <label for="funnel-end-date">To:</label>
+          <input type="date" id="funnel-end-date" />
+          <button id="funnel-filter-btn">Filter</button>
+          <button id="funnel-reset-btn">Reset (All Time)</button>
+        </div>
+        <!-- NEW: Toggle for analytics mode -->
+        <div class="filter-controls">
+            <label>Analytics Mode:</label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="analytics-mode-toggle" class="toggle-switch-checkbox">
+                <label for="analytics-mode-toggle" class="toggle-switch-label"></label>
+            </div>
+            <span id="analytics-mode-label">Unique Users</span>
+        </div>
+        <div id="funnel-container">
+          <p>Loading stats...</p>
+        </div>
+        <hr />
+        <h2>Financials</h2>
+        <div class="filter-controls">
+          <label for="commission-month">Month:</label>
+          <select id="commission-month">
+            <!-- Months will be populated by JS -->
+          </select>
+          <label for="commission-year">Year:</label>
+          <select id="commission-year">
+            <!-- Years will be populated by JS -->
+          </select>
+          <button id="commission-filter-btn">Get Report</button>
+        </div>
+        <div id="commission-container">
+          <p>Loading commission data...</p>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      import { ethers } from "ethers";
+      window.ethers = ethers;
+    </script>
+    <script type="module" src="/js/dashboard.js"></script>
+    <hr />
+    <footer>
+      <p>
+        For questions or support, please contact:
+        <a href="mailto:support@muschairs.com">support@muschairs.com</a>
+      </p>
+    </footer>
+  </body>
+</html>

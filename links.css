@@ -1,0 +1,48 @@
+/* styles.css or a new dedicated CSS file */
+.community-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.links-container-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-card svg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+/* Specific adjustments for icons with non-standard viewboxes */
+.link-card[title="Medium"] img,
+.link-card[title="Dev.to"] img {
+  width: 36px;
+  height: 36px;
+}

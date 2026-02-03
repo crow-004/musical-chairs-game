@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Referrals - Musical Chairs</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://muschairs.com/referrals.html" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="links.css" />
+  </head>
+  <body>
+    <h1>My Referrals Dashboard</h1>
+    <p><a href="/">&larr; Back to Game</a></p>
+
+    <div id="connection-status" class="dashboard-card">
+      <p>Wallet status: <span id="wallet-status">Not connected</span></p>
+      <p>
+        Network: <span id="network-status">Unknown</span> (Needed:
+        <span id="required-network">?</span>)
+      </p>
+      <p>Address: <span id="player-address">N/A</span></p>
+      <button id="connect-button">Connect wallet</button>
+    </div>
+    <hr />
+
+    <div id="referral-management" style="display: none">
+      <h2>My Referral Dashboard</h2>
+
+      <!-- NEW: Referral System Info Block -->
+      <div id="referral-system-info" class="info-box">
+        <button id="toggle-info-button" class="toggle-info-button">
+          Show Referral System Info
+        </button>
+        <div id="info-content-wrapper" class="info-content-wrapper collapsed">
+          <h2>Referral System Mechanics</h2>
+          <h3>How It Works</h3>
+          <p>
+            The referral system is fully on-chain and designed to be simple yet
+            powerful.
+          </p>
+          <ul>
+            <li>
+              <strong>Share Your Link:</strong> Provide your unique referral
+              link to friends. You can find it in the "Your Referral Link"
+              section below.
+            </li>
+            <li>
+              <strong>First-Time Join:</strong> When a new player joins a game
+              for the first time using your link, a referral request is created
+              on-chain and sent to you for approval.
+            </li>
+            <li>
+              <strong>Confirm Referees:</strong> You must approve each referral
+              request in the "Pending Confirmations" section of this dashboard.
+              This is a one-time action per referee.
+            </li>
+            <li>
+              <strong>Start Earning:</strong> Once you confirm a referee, you
+              will begin earning a commission from the platform's fees for every
+              game they play.
+            </li>
+          </ul>
+
+          <h3>Earning Commission</h3>
+          <p>
+            A portion of the platform's commission from every game is allocated
+            to a Referral Pool. This pool is then distributed among the
+            referrers of the players in that game. Your share of the pool is
+            proportional to the number of players you referred in that game
+            relative to the total number of referred players.
+          </p>
+          <ul>
+            <li>
+              <strong>Example 1 (Max Earnings):</strong> If your referee is the
+              only referred player in a full game, you receive the entire
+              referral commission for that game.
+            </li>
+            <li>
+              <strong>Example 2 (Shared Earnings):</strong> If all 5 players in
+              a game were brought in by different referrers, the commission is
+              split five ways, and you get an equal share.
+            </li>
+          </ul>
+          <p>
+            <strong>Important:</strong> You will only start earning commission
+            from a player's games AFTER you have confirmed them in your
+            dashboard.
+          </p>
+        </div>
+      </div>
+      <!-- Referral Link Section -->
+      <div class="dashboard-card" id="referral-link-section">
+        <h3>Your Referral Link</h3>
+        <p>
+          Invite friends with your link and earn a percentage of the commission
+          from their games!
+        </p>
+        <div class="referral-actions">
+          <button id="copy-referral-link-button">Copy Link</button>
+          <input
+            type="text"
+            id="referral-link-input"
+            class="referral-link-display"
+            readonly
+            title="Your personal referral link"
+          />
+          <!-- NEW: Wrapper for QR code and instruction -->
+          <div class="qr-wrapper">
+            <div id="qr-code-container">
+              <!-- QR code will be generated here by JS -->
+            </div>
+            <div class="qr-instruction">
+              <span>→ right click and copy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW GRID CONTAINER FOR EARNINGS, CONFIRMATIONS, AND LOGS -->
+      <div class="referral-grid">
+        <!-- Earnings Section -->
+        <div class="dashboard-card" id="referral-earnings-container">
+          <h3>Your Earnings</h3>
+          <p>Claimable: <span id="referral-earnings-amount">0.0</span> ETH</p>
+          <button id="claim-referral-earnings-button" disabled>
+            Claim Earnings
+          </button>
+          <p
+            id="claim-threshold-note"
+            style="font-size: 0.8em; color: #666; margin-top: 5px"
+          >
+            (Minimum claim amount: <span id="min-claim-amount">...</span> ETH)
+          </p>
+        </div>
+
+        <!-- Confirmations Section -->
+        <div class="dashboard-card" id="pending-confirmations-container">
+          <h3>Pending Confirmations</h3>
+          <p>
+            Confirm players you've referred so you can start earning commission
+            from their games.
+          </p>
+          <ul id="pending-referrals-list">
+            <li>No pending confirmations.</li>
+          </ul>
+        </div>
+
+        <!-- NEW: All Referrals Section -->
+        <div class="dashboard-card" id="all-referrals-container">
+          <h3>My Referrals List</h3>
+          <p>A list of all players you have referred.</p>
+          <button id="show-referrals-button" disabled>
+            Show My Referrals
+          </button>
+          <div id="all-referrals-list" style="margin-top: 15px">
+            <!-- List will be populated here -->
+          </div>
+        </div>
+
+        <div id="logs" class="dashboard-card">
+          <h2>Logs</h2>
+          <pre id="log-output">Please connect your wallet...</pre>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import * as Sentry from "@sentry/browser";
+      import { ethers } from "ethers";
+
+      window.Sentry = Sentry;
+      window.ethers = ethers;
+
+      Sentry.init({
+        dsn: "__SENTRY_DSN_FRONTEND__",
+        integrations: [
+          Sentry.browserTracingIntegration(),
+          Sentry.replayIntegration({
+            maskAllText: false,
+            blockAllMedia: false,
+          }),
+        ],
+        tracesSampleRate: 1.0,
+        replaysSessionSampleRate: 0.1,
+        replaysOnErrorSampleRate: 1.0,
+      });
+    </script>
+    <script src="/js/collapsible.js"></script>
+    <script src="/js/qrcode.min.js"></script>
+    <script type="module" src="js/referrals.js"></script>
+
+    <div class="footer-qr-section">
+      <a href="/links.html" class="footer-qr-link">
+        <img
+          src="/images/official_links_qr.png"
+          alt="Official Links QR Code"
+        />
+        <span>Official Links</span>
+      </a>
+    </div>
+
+    <hr />
+    <footer>
+      <p>
+        For questions or support, please contact:
+        <a href="mailto:support@muschairs.com">support@muschairs.com</a>
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musical Chairs</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://muschairs.com/" />
+    <meta name="description" content="Musical Chairs - the first fully on-chain skill-to-earn game on Arbitrum. Prove your discipline, not luck. Experience fair play crypto gaming in the Arbitrum gaming ecosystem." />
+
+    <!-- Smart Contract Address for SEO and bots -->
+    <meta name="ethereum:contract" content="0xEDA164585a5FF8c53c48907bD102A1B593bd17eF">
+
+    <!-- Farcaster Mini App Embed Tags (as per latest docs) -->
+    <meta
+      property="fc:miniapp"
+      content='{"version":"1","imageUrl":"https://cdn.jsdelivr.net/gh/crow-004/musical-chairs-game@main/docs/images/banner.png","button":{"title":"Play Now & Check Live Stats","action":{"type":"launch_miniapp","name":"Musical Chairs Game","url":"https://muschairs.com"}}}'
+    />
+    <!-- Backward compatibility for older clients -->
+    <meta
+      property="fc:frame"
+      content='{"version":"1","imageUrl":"https://cdn.jsdelivr.net/gh/crow-004/musical-chairs-game@main/docs/images/banner.png","button":{"title":"Play Now & Check Live Stats","action":{"type":"launch_frame","name":"Musical Chairs Game","url":"https://muschairs.com"}}}'
+    />
+
+    <!-- Standard Open Graph tags for other social platforms -->
+    <meta property="og:title" content="Musical Chairs - The On-Chain Sandbox" />
+    <meta property="og:description" content="Musical Chairs - the first fully on-chain skill-to-earn game on Arbitrum. Prove your discipline, not luck. Experience fair play crypto gaming in the Arbitrum gaming ecosystem." />
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/crow-004/musical-chairs-game@main/docs/images/banner.png" />
+    
+    <!-- Google Fonts for a nicer subtitle -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+      .hidden {
+        display: none;
+      }
+      .landing-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        /* color is now handled by style.css for theme switching */
+        letter-spacing: 0.5px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="links.css" />
+
+  </head>
+  <body>
+    <div id="age-verification-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+          <h2>Age Verification</h2>
+          <p>Are you 18 or older?</p>
+          <div class="modal-buttons">
+              <button id="age-yes-btn">Yes</button>
+              <button id="age-no-btn">No</button>
+          </div>
+      </div>
+  </div>
+  <div id="age-restriction-message" style="display: none; text-align: center; padding: 50px; font-size: 1.2em;">
+      <p>You must be 18 or older to access this site.</p>
+  </div>
+    <!-- NEW: Top Navigation Bar -->
+    <nav class="top-navbar">
+      <!-- Global Theme Switcher -->
+      <div class="theme-switch-wrapper">
+        <!-- Moon Icon -->
+        <svg class="theme-icon" id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.463-.69a.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-3.51 1.713-6.635 4.463-8.482a.75.75 0 01.819.162z" clip-rule="evenodd" /></svg>
+        <label class="theme-switch" for="theme-toggle">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label><!-- Sun Icon -->
+        <svg class="theme-icon" id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.894 17.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18.75a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0v-2.25a.75.75 0 01.75-.75zM5.106 17.894a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.106 6.106a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+      </div>
+
+      <div class="nav-group networks">
+        <span class="nav-label">Stake (ETH):</span>
+        <a href="https://eth.muschairs.com" title="Ethereum (Elite)" class="nav-icon-link">
+          <img src="images/icon-ethereum.svg" alt="Ethereum">
+          <span>0.02</span>
+        </a>
+        <a href="https://base.muschairs.com" title="Base (Arena)" class="nav-icon-link">
+          <img src="images/icon-base.svg" alt="Base">
+          <span>0.007</span>
+        </a>
+        <a href="https://muschairs.com" title="Arbitrum (Academy)" class="nav-icon-link">
+          <img src="images/icon-arbitrum.svg" alt="Arbitrum">
+          <span>0.0007</span>
+        </a>
+        <a href="https://test.muschairs.com" title="Testnet (Sandbox)" class="nav-icon-link">
+          <img src="images/icon-test-website.svg" alt="Testnet">
+          <span>0.0007 Test-ETH</span>
+        </a>
+      </div>
+
+      <div class="nav-group pages">
+        <a href="/leaderboard.html" class="nav-text-link">
+          <span style="font-size: 1.2em;">🏆</span>
+          <span>Leaderboard</span>
+        </a>
+        <a href="/referrals.html" class="nav-text-link">
+          <span style="font-size: 1.2em;">👥</span>
+          <span>Referrals</span>
+        </a>
+      </div>
+
+      <!-- Global Mute/Unmute Button -->
+      <div id="mute-toggle-button" class="mute-toggle">
+        <!-- Volume On Icon -->
+        <svg id="volume-on-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 001.5 12c0 .898.121 1.768.348 2.595.341 1.24 1.518 1.905 2.66 1.905H6.44l4.5 4.5c.944.945 2.56.276 2.56-1.06V4.06zM18.584 5.106a.75.75 0 011.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 11-1.06-1.06 8.25 8.25 0 000-11.668.75.75 0 010-1.06z" /><path d="M15.932 7.757a.75.75 0 011.061 0 6 6 0 010 8.486.75.75 0 01-1.06-1.061 4.5 4.5 0 000-6.364.75.75 0 010-1.06z" /></svg>
+        <!-- Volume Off Icon (initially hidden) -->
+        <svg id="volume-off-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 001.5 12c0 .898.121 1.768.348 2.595.341 1.24 1.518 1.905 2.66 1.905H6.44l4.5 4.5c.944.945 2.56.276 2.56-1.06V4.06zM18.28 18.28a.75.75 0 001.06-1.06l-1.06-1.06-1.06 1.06a.75.75 0 001.06 1.06zm-2.348-2.348a.75.75 0 001.06-1.06l-1.06-1.06-1.06 1.06a.75.75 0 001.06 1.06zm-2.348-2.348a.75.75 0 001.06-1.06l-1.06-1.06-1.06 1.06a.75.75 0 001.06 1.06zm-2.348-2.348a.75.75 0 001.06-1.06l-1.06-1.06-1.06 1.06a.75.75 0 001.06 1.06z" /></svg>
+      </div>
+    </nav>
+    <!-- ================================================== -->
+    <!-- SLIDE 1: NEW LANDING PAGE SECTION                  -->
+    <!-- ================================================== -->
+    <div id="landing-section">
+      <header class="main-header">
+        <h1>Musical Chairs</h1>
+      </header>
+      <div class="info-box" style="text-align: center; padding: 2rem 1rem;">
+        <!-- NEW: Flex container for animation and text -->
+        <div class="landing-intro-flex-container">
+          <!-- Column 1: SVG Animation -->
+          <div id="animation-container">
+            <!-- INLINED SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" id="chairs-animation-svg">
+              <defs>
+                <g id="chair-icon" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M 5,15 H 15" /> <path d="M 5,15 V 5 H 15 V 15" /> <path d="M 6,15 L 6,20" /> <path d="M 14,15 L 14,20" />
+                </g>
+              </defs>
+              <g id="chairs-container" transform-origin="100 100">
+                <use href="#chair-icon" id="chair-1" transform="translate(100, 100) rotate(0) translate(0, -65) scale(2)" />
+                <use href="#chair-icon" id="chair-2" transform="translate(100, 100) rotate(72) translate(0, -65) scale(2)" />
+                <use href="#chair-icon" id="chair-3" transform="translate(100, 100) rotate(144) translate(0, -65) scale(2)" />
+                <use href="#chair-icon" id="chair-4" transform="translate(100, 100) rotate(216) translate(0, -65) scale(2)" />
+                <use href="#chair-icon" id="chair-5-animated" transform="translate(100, 100) rotate(288) translate(0, -65) scale(2)" />
+              </g>
+            </svg>
+          </div>
+          <!-- Column 2: Text Content -->
+          <div class="landing-text-content">
+            <h2 style="font-size: 2.5rem; font-weight: 800; color: #F97316;">🎶 5 chairs. 4 winners. 1 shot.</h2>
+            <p class="landing-subtitle" style="font-size: 1.25rem; margin-top: 1rem;">The childhood game we loved is back — and this time it pays you in crypto. Simple, fast, and transparently fair.</p>
+            <p class="inspiration-text">Inspired by the rush for seats on the Dubai Metro!</p>
+          </div>
+        </div>
+        
+        <!-- NEW: How to Play Schema -->
+        <div id="quick-start-guide-landing" class="quick-start-guide-landing">
+          <h3>How to Play</h3>
+          <div class="steps">
+            <div class="step">Connect Wallet</div>
+            <div class="arrow">→</div>
+            <div class="step">Join Game</div>
+            <div class="arrow">→</div>
+            <div class="step">Deposit Stake</div>
+            <div class="arrow">→</div>
+            <div class="step">Play!</div>
+            <div class="arrow">→</div>
+            <div class="step">Claim Winnings</div>
+          </div>
+        </div>
+
+        <button id="enter-app-button" class="join-button-style" style="margin-top: 2rem; padding: 1rem 2rem; font-size: 1.25rem;">Play Now</button>
+        <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem;">
+          <button id="toggle-story-button" class="toggle-info-button">Read Our Story</button>
+          <button id="toggle-rules-button" class="toggle-info-button">Show Detailed Rules & Info</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOVED: Detailed rules are now outside the app section and initially hidden -->
+    <div id="story-section" class="info-box hidden" style="margin-top: 1rem;">
+      <h3>The Spark of an Idea</h3>
+      <p>The concept for Musical Chairs wasn't born in a boardroom; it sparked to life in the controlled chaos of the Dubai Metro.</p>
+      <p>Picture this: a train glides into the station, doors slide open, and a silent, high-stakes race begins. People surge forward, eyes scanning for the few empty seats. It's a game of speed, observation, and a little bit of luck. A moment of hesitation, and you've lost your chance.</p>
+      <p>That fleeting, universal thrill—the rush to claim a limited spot—is the soul of this project. We asked ourselves: what if we could capture that feeling, distill it, and put it on the blockchain?</p>
+      <p>The result is Musical Chairs: a game that transforms a simple, real-world moment of competition into a transparent, fast-paced on-chain experience where timing is everything. It's not just about code; it's about recreating that primal rush for the last seat on the train.</p>
+    </div>
+
+    <div id="detailed-rules-section" class="info-box hidden" style="margin-top: 1rem;">
+      <!-- NEW: Collapsible sections for rules -->
+      <div class="collapsible-section">
+        <h3 class="collapsible-header">Detailed Rules:<span class="toggle-icon">+</span></h3>
+        <div class="collapsible-content">
+          <ul>
+            <li>Connect your wallet (a list of recommended wallets will be displayed upon connection) and ensure you are on the correct network <span id="rule-network-name">(Arbitrum)</span>.</li>
+            <li id="rule-game-start">Click "Join / Find Game" to enter a waiting room. A game is created on-chain when 5 players join, or if the waiting room timer expires with at least 2 players.</li>
+            <li>After the game is created onchain, you must deposit your stake <span id="rule-stake-amount">(0.002 ETH)</span> within the time limit to participate. The commission is <span id="rule-commission-percent">3%</span> of the stake amount per player.</li>
+            <li id="rule-music-start">The music will begin to play once all 5 players have deposited, or if the deposit timer expires with at least 2 players.</li>
+            <li>When the music stops, a "CLICK!" button will appear. Click it as fast as you can!</li>
+            <li>The backend determines the loser: the last player to click among those who clicked, or a random player among those who did not click within the time limit. Your reaction time will be displayed on the website.</li>
+            <li>The game ends when only winners remain. The winners share the loser's stake minus the commission.</li>
+            <li>Claim your winnings using the "Claim your winnings" button after the game is finished and results are recorded onchain.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="collapsible-section">
+        <h3 class="collapsible-header">Instructions & Troubleshooting:<span class="toggle-icon">+</span></h3>
+        <div class="collapsible-content">
+          <ul>
+            <li><strong>"Claim your winnings" button inactive:</strong> If a game has finished, you believe you are a winner, and the "Claim your winnings" button is not active or visible, please try refreshing the page. Blockchain updates can sometimes take a moment to fully reflect in the user interface.</li>
+            <li><strong>Game stuck or not updating:</strong> A page refresh can often resolve minor display issues. Ensure your internet connection is stable.</li>
+            <li><strong>Deposit Timeout:</strong> You have 5 minutes to make a deposit. If you joined a game that was created onchain but failed to deposit in time, you will be disqualified from that game.</li>
+            <li><strong>Persistent Network Errors ("Load failed"):</strong> If you repeatedly see network errors, your browser's privacy settings or ad-blocker might be blocking the default network connection (RPC). You can often fix this by configuring a more robust RPC endpoint in your MetaMask wallet settings for the Arbitrum network. A reliable, public alternative is: <code>https://rpc.ankr.com/arbitrum</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="collapsible-section">
+        <h3 class="collapsible-header">Important Disclaimers:<span class="toggle-icon">+</span></h3>
+        <div class="collapsible-content">
+          <p><strong>Reaction Speed & Technical Factors:</strong> This game relies on your reaction speed. Your performance can be influenced by various factors, including but not limited to your internet connection speed, device performance, browser load, and network latency. The developers are not responsible for these external factors affecting gameplay.</p>
+          <p><strong>Fair Play & Anti-Bot Measures:</strong> We have implemented measures to promote fair play and discourage the use of automated scripts or bots. However, no system can guarantee 100% protection against such activities. By choosing to play, you acknowledge these potential risks and agree that you are fully responsible for your decision to participate and for any outcomes.</p>
+          <p><strong>Signature Required:</strong> Upon entering the waiting room, you will be prompted to sign a message with your wallet. This is a standard cryptographic signature request (does NOT cost gas) used to verify your ownership of the wallet address and prevent bot activity.</p>
+          <p><strong>Play Responsibly:</strong> This is a game involving chance and skill. Please play responsibly and only with funds you are comfortable losing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================================== -->
+    <!-- SLIDE 2: EXISTING APP SECTION (Initially hidden) -->
+    <!-- ================================================== -->
+    <div id="app-section" class="hidden">
+    <header class="main-header">
+      <!-- NEW: Back to Home button -->
+      <button id="back-to-home-button" class="back-button">← Back to Home</button>
+
+      <h1 id="main-title"><!-- Title and link will be populated by JavaScript --></h1>
+      <p class="active-users">
+        <span class="live-dot"></span>
+        <span id="active-users-text">-- users online now</span>
+      </p>
+      <p class="visitors-24h">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="currentColor" style="vertical-align: -0.125em; margin-right: 4px;"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"/></svg>
+        <span id="visitors-24h-text">-- visitors in last 24h</span>
+      </p>
+    </header>
+
+    <!-- The header and all other game elements that were here remain inside this div -->
+    <!-- ... (rest of the #app-section content from the original file) ... -->
+
+    <!-- NEW TOP-LEVEL LAYOUT CONTAINER -->
+    <div class="page-layout">
+      <!-- Left column for the four main cards -->
+      <div class="main-content-column">
+        <!-- INFO GRID CONTAINER -->
+        <div class="info-grid">
+          <div id="connection-status" class="info-card">
+            <h2>Wallet & Network</h2>
+            <p>Wallet status: <span id="wallet-status">Not connected</span></p>
+            <p>
+              Network: <span id="network-status">Unknown</span> (Needed:
+              <span id="required-network">?</span>)
+            </p>
+            <p>Address: <span id="player-address">N/A</span></p>
+            <p>Balance: <span id="player-balance">N/A</span></p>
+            <button id="connect-button">Connect wallet</button>
+          </div>
+
+          <div id="game-info" class="info-card">
+            <h2>Game Information</h2>
+            <p>
+              Contract address: <span id="contract-address">Loading...</span>
+            </p>
+            <p>Bet: <span id="stake-amount">Loading...</span></p>
+            <p>Commission: <span id="commission-amount">Loading... (per player)</span></p>
+          </div>
+        </div>
+
+        <!-- MAIN GRID CONTAINER -->
+        <div class="main-grid">
+          <div id="game-controls" class="main-card">
+            <h2>Game Controls</h2>
+            <p>Current Game ID: <span id="game-id">N/A</span></p>
+            <button id="join-button" disabled>Join / Find Game</button>
+            <button id="deposit-button" style="display: none">
+              Deposit Stake
+            </button>
+            <button id="react-button" disabled>CLICK!</button>
+            <button id="refund-button" style="display: none">
+              Request Refund
+            </button>
+            <button id="claim-button" style="display: none">
+              Claim your winnings
+            </button>
+          </div>
+
+          <div id="game-state" class="main-card">
+            <h2>Current Game Status</h2>
+            <p>Status: <span id="game-status-text">Waiting to join...</span></p>
+            <!-- Timers -->
+            <div
+              id="waiting-room-timer-container"
+              class="timer-container"
+              style="display: none"
+            >
+              <span>Time to find players: </span>
+              <span id="waiting-room-timer" class="timer-value">--:--</span>
+            </div>
+            <div
+              id="deposit-timer-container"
+              class="timer-container"
+              style="display: none"
+            >
+              <span>Time to deposit: </span>
+              <span id="deposit-timer" class="timer-value">--:--</span>
+            </div>
+            <div
+              id="click-timer-container"
+              class="timer-container"
+              style="display: none"
+            >
+              <p>
+                Time to Click:
+                <span id="click-timer" class="timer-value"></span>
+              </p>
+            </div>
+            <p>
+              <span id="player-count-label">Players in room</span>:
+              <span id="deposited-count">0 / ?</span>
+            </p>
+            <h3>Players:</h3>
+            <ul id="player-list">
+              <li>(empty)</li>
+            </ul>
+            <h3>Result:</h3>
+            <p>Winners: <span id="winners-list">N/A</span></p>
+            <p>Loser: <span id="loser-address">N/A</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column for logs -->
+      <div id="logs" class="log-column">
+        <h2>Logs / Status</h2>
+        <pre id="log-output">Waiting for action...</pre>
+      </div>
+    </div>
+    </div>
+    <hr />
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop preload="auto">
+      <!-- The user needs to provide this file -->
+      <source src="audio/background-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameMusic" loop preload="auto"></audio>
+    <audio id="unlockSound" preload="auto">
+        <source src="audio/unlock.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="winSound" preload="auto">
+        <source src="audio/win.mp3" type="audio/mpeg">
+    </audio>
+
+    <script type="module" src="app.js"></script>
+
+    <!-- Umami Analytics Script. Handled by our Nginx reverse proxy. -->
+    <!-- UMAMI_SCRIPT -->
+
+    <div class="footer-qr-section">
+      <a href="/links.html" class="footer-qr-link">
+        <img
+          src="/images/official_links_qr.png"
+          alt="Official Links QR Code"
+        />
+        <span>Official Links</span>
+      </a>
+      <a href="https://www.producthunt.com/products/musical-chairs/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-musical-chairs" target="_blank">
+        <img src="images/badge_product.svg" alt="Musical Chairs - The first Web3-powered game of chairs with real rewards. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" />
+      </a>
+    </div>
+    <!-- ================================================== -->
+    <!-- NEW: CUSTOM WALLET MODAL (from Zyrik's version)    -->
+    <!-- ================================================== -->
+    <div id="custom-wallet-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <span id="modal-close-button" class="close-button">
+          <img src="images/x.svg" alt="Close" class="close-icon" />
+        </span>
+        <h2>Connect Wallet</h2>
+
+        <!-- State 1: Wallet Selection -->
+        <div id="desktop-connect-options" class="wallet-options">
+          <p>Select a wallet to connect:</p>
+          <div id="desktop-options">
+            <button data-wallet="metamask">
+              <span class="wallet-label-group">
+                <img src="images/icon-metamask-fox.svg" alt="MetaMask Logo" class="wallet-icon" />
+                MetaMask
+              </span>
+            </button>
+            <button data-wallet="coinbase">
+              <span class="wallet-label-group">
+                <img src="images/icon-coinbase.svg" alt="Coinbase Logo" class="wallet-icon" />
+                Coinbase Wallet
+              </span>
+            </button>
+            <button data-wallet="rabby">
+              <span class="wallet-label-group">
+                <img src="images/icon-rabby.svg" alt="Rabby Logo" class="wallet-icon" />
+                Rabby Wallet
+              </span>
+            </button>
+            <button data-wallet="okx">
+              <span class="wallet-label-group">
+                <img src="images/icon-okx.svg" alt="OKX Wallet Logo" class="wallet-icon" />
+                OKX Wallet
+              </span>
+            </button>
+            <button data-wallet="zerion">
+              <span class="wallet-label-group">
+                <img src="images/icon-zerion.svg" alt="Zerion Logo" class="wallet-icon" />
+                Zerion Wallet
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- NEW: State for Mobile Deep Links -->
+        <div id="mobile-deep-link-options" class="wallet-options" style="display: none;">
+          <p>Choose your wallet to continue:</p>
+          <a href="metamask://dapp/muschairs.com" class="button deep-link-button">
+            Open in MetaMask
+          </a>
+          <a href="coinbase://dapp?url=https://muschairs.com" class="button deep-link-button">
+            Open in Coinbase Wallet
+          </a>
+          <a href="trust://browser_enable?url=https://muschairs.com" class="button deep-link-button">
+            Open in Trust Wallet
+          </a>
+          <a href="okx://wallet/dapp?url=https://muschairs.com" class="button deep-link-button">
+            Open in OKX Wallet
+          </a>
+          <p style="font-size: 0.8em; color: #888; margin-top: 15px;">For the best experience, please open muschairs.com directly in your wallet's built-in browser.</p>
+        </div>
+
+        <!-- State 2: Connecting Status -->
+        <div id="connection-status-state" class="modal-state hidden">
+          <div id="status-logo-container"></div>
+          <h3 id="status-title">Connecting...</h3>
+          <p id="status-message">Please confirm the connection in your wallet extension.</p>
+          <button id="back-to-selection-button" class="modal-back-button">
+            <img src="images/arrow-left.svg" alt="Back" class="back-icon" />
+          </button>
+        </div>
+
+        <!-- State 3: Failure Status -->
+        <div id="failure-state" class="modal-state hidden">
+          <div id="failure-logo-container"></div>
+          <h3 id="failure-title">Extension Not Found</h3>
+          <p id="failure-message">It looks like the <span id="failure-wallet-name">selected wallet</span> is not installed.</p>
+          <a id="download-link" href="#" target="_blank" class="button">Download Wallet Extension</a>
+          <button id="try-again-button" class="button secondary-button" style="margin-top: 10px;">Try Again</button>
+        </div>
+
+        <!-- NEW: Credit for the modal designer -->
+        <div class="modal-credit">
+          This modal window was designed and implemented by @zyrick_x (TG)
+        </div>
+      </div>
+    </div>
+    <hr />
+    <footer>
+      <p>
+        For questions or support, please contact:
+        <a href="mailto:support@muschairs.com">support@muschairs.com</a>
+      </p>
+    </footer>
+  </body>
+</html>

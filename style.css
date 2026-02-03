@@ -1,0 +1,1403 @@
+/* --- THEME VARIABLES --- */
+:root {
+  /* Dark Theme (Default) */
+  --card-bg-color: rgba(27, 30, 54, 0.7);
+  --card-border-color: rgba(255, 255, 255, 0.1);
+  --card-text-color: #e0e0e0;
+  --card-heading-color: #ffffff;
+  --monospace-text-color: #c0c0c0;
+  --body-text-color: #e0e0e0;
+  --subtitle-color: #d1d5db; /* Light gray for subtitle */
+  --inspiration-color: #9ca3af; /* Lighter gray for inspiration text */
+  --step-bg-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white for steps */
+  --arrow-color: #d1d5db; /* Light gray for arrows */
+  --icon-color: #9ca3af; /* Default icon color */
+  --link-color: #ffffff; /* NEW: White links for dark theme */
+  --icon-active-color: #facc15; /* Yellow for active sun/moon */
+  --header-border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme {
+  /* Light Theme Overrides */
+  --card-bg-color: #e9f7fd;
+  --card-border-color: #bce8f1;
+  --card-text-color: #333;
+  --card-heading-color: #31708f;
+  --monospace-text-color: #333;
+  --body-text-color: #333;
+  --subtitle-color: #4b5563; /* Original dark gray */
+  --inspiration-color: #6b7280; /* Original subtle gray */
+  --step-bg-color: #fff; /* Original white */
+  --arrow-color: #555; /* Original dark gray for arrows */
+  --icon-color: #6b7280; /* Default icon color */
+  --link-color: #0056b3; /* NEW: Dark blue links for light theme */
+  --icon-active-color: #f97316; /* Orange for active sun */
+  --header-border-color: #bce8f1;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  /* NEW: Animated gradient background */
+  /* NEW: More vibrant and noticeable gradient */
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ec008c, #fc6767);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: var(--body-text-color); /* Use CSS variable */
+}
+
+/* NEW: General link styling */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+/* NEW: Keyframes for the background animation */
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* NEW: Keyframes for the SVG animation */
+@keyframes rotate-chairs {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-chair {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* NEW: Styles for the inlined SVG animation */
+#animation-container svg {
+  width: 100%;
+}
+#chairs-container {
+  animation: rotate-chairs 20s linear infinite;
+}
+#chair-5-animated {
+  animation: fade-chair 5s ease-in-out infinite;
+}
+
+/* NEW: Styles for the flex layout on the landing page */
+.landing-intro-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Space between animation and text */
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Allow stacking on small screens */
+}
+
+#animation-container {
+  flex: 0 0 150px; /* Animation takes a fixed width of 150px */
+}
+
+.landing-text-content {
+  flex: 1; /* Text content takes the remaining space */
+  text-align: left; /* Align text to the left within its container */
+  min-width: 300px; /* Ensure it doesn't get too squished */
+}
+
+.inspiration-text {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--inspiration-color); /* Use CSS variable */
+  margin-top: 1rem;
+}
+
+/* --- NEW: Theme Switcher Styles --- */
+.theme-switch-wrapper {
+  display: flex;
+  gap: 0.5rem; /* Space between icons and switch */
+  align-items: center;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4c566a; /* Dark gray for the slider background */
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--icon-color);
+  transition: color 0.4s ease;
+}
+
+/* By default (dark theme), moon is active */
+#moon-icon { color: var(--icon-active-color); }
+
+/* When light theme is on, sun is active */
+body.light-theme #sun-icon {
+  color: var(--icon-active-color);
+}
+
+/* --- NEW: Mute/Unmute Button Styles --- */
+.mute-toggle {
+  cursor: pointer;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mute-toggle svg {
+  width: 24px;
+  height: 24px;
+  color: var(--icon-color);
+}
+/* NEW: Animation for cards to fade in on load */
+.info-box, .main-card {
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styles for the new rules/info section */
+.info-box {
+  /* NEW: Common class for info boxes */
+  background-color: var(--card-bg-color); /* Use CSS variable */
+  backdrop-filter: blur(10px); /* NEW: Frosted glass effect */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border-color); /* Use CSS variable */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  color: var(--card-text-color); /* Use CSS variable */
+}
+
+.info-box h2,
+.info-box h3 {
+  color: var(--card-heading-color); /* Use CSS variable */
+  margin-top: 0; /* Remove default top margin for first heading */
+}
+.info-box h3 {
+  margin-top: 1em; /* Add some space above subheadings */
+}
+
+/* New styles for the quick start guide */
+#quick-start-guide {
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #bce8f1;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 10px 15px; /* Row and column gap */
+}
+
+.step {
+  background-color: var(--step-bg-color); /* Use CSS variable */
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--card-border-color); /* Use card border for consistency */
+  font-size: 1em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.arrow {
+  font-size: 1.5em;
+  color: var(--arrow-color); /* Use CSS variable */
+}
+
+.info-box ul {
+  padding-left: 20px; /* Indent list items */
+}
+.info-box p {
+  margin-bottom: 0.8em;
+}
+
+/* Apply subtitle color from variables */
+.landing-subtitle {
+  color: var(--subtitle-color);
+}
+
+/* NEW: Use monospace font for detailed rules for a more "technical" feel */
+#detailed-rules-section ul,
+#detailed-rules-section p {
+  font-family: "Courier New", Courier, monospace; 
+  color: var(--monospace-text-color); /* Use CSS variable */
+}
+
+/* NEW: Apply special font for the story section */
+#story-section h3,
+#story-section p {
+  font-family: 'Cinzel', serif;
+}
+
+
+.toggle-info-button {
+  /* NEW: Common class for toggle buttons */
+  background-color: #5bc0de; /* Info blue color */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px; /* Space between button and content */
+  font-size: 0.9em;
+  display: block; /* Make it a block to control width or center if needed */
+}
+
+.toggle-info-button:hover {
+  background-color: #31b0d5;
+}
+
+/* NEW: Styles for the referral info collapsible block */
+.info-content-wrapper {
+  max-height: 1000px; /* A large enough value for the content */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  padding: 15px 20px;
+  opacity: 1;
+}
+
+.info-content-wrapper.collapsed {
+  max-height: 0;
+  padding: 0 20px; /* Collapse padding */
+  opacity: 0;
+}
+/* Styles for cards on referrals.html */
+.dashboard-card {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* NEW: Styles for collapsible rules sections */
+.collapsible-section {
+  border-bottom: 1px solid var(--card-border-color);
+  margin-bottom: 1rem;
+}
+.collapsible-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.collapsible-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  margin-top: 0; /* Override default h3 margin */
+  margin-bottom: 0;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  padding-left: 1rem; /* Indent content */
+}
+
+/* Blinking cursor for typewriter effect */
+.typing-cursor::after {
+  content: '▋';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { color: transparent; }
+  50% { color: var(--card-heading-color); }
+}
+
+
+.back-button {
+  position: absolute;
+  top: 0.5rem;  /* Move it higher */
+  left: 0.1rem; /* Move it to the left */
+  background-color: #374151; /* gray-700 */
+  color: #d1d5db; /* gray-300 */
+  border: 1px solid #4b5563; /* gray-600 */
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.back-button:hover {
+  background-color: #4b5563; /* gray-600 */
+}
+
+/* --- Main Page Layout --- */
+.page-layout {
+  display: flex;
+  gap: 2rem; /* Space between main content and log column */
+  margin-bottom: 1rem;
+  flex-wrap: wrap; /* Allows columns to stack on smaller screens */
+}
+
+/* NEW: Styles for the main page header */
+.main-header {
+  position: relative; /* Needed for absolute positioning of children */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--header-border-color); /* Use CSS variable */
+  margin-bottom: 20px;
+  padding-left: 150px; /* Add padding to prevent title from overlapping the back button */
+}
+.main-header h1 {
+  margin: 0; /* Remove default margin from h1 */
+  text-align: center; /* Center the title */
+}
+
+/* NEW: Style for the cross-site link inside the main title */
+.main-header h1 a {
+  font-size: 0.5em; /* Make the link text smaller */
+  font-weight: normal;
+  text-decoration: none;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+/* NEW: Style for the active users count in the header */
+.main-header .active-users {
+  margin: 0; /* Remove default paragraph margin */
+  font-size: 0.9em;
+  color: #555;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align the dot and text */
+}
+
+/* NEW: Style for the 24h visitors count in the header */
+.main-header .visitors-24h {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+  margin-left: 20px; /* Add some space between the two stats */
+}
+
+/* NEW: Override specific element colors to be always white */
+footer p,
+footer a,
+.footer-qr-link,
+.footer-qr-link span,
+.main-header .active-users,
+.main-header .visitors-24h,
+.main-header .utc-time {
+  color: #e0e0e0 !important; /* Use a slightly off-white for better blending */
+}
+
+/* Ensure the SVG icons within these elements also inherit the white color */
+.main-header .visitors-24h svg,
+.main-header .utc-time svg {
+  fill: #e0e0e0 !important;
+}
+
+/* Left column for the four main cards */
+.main-content-column {
+  flex: 2; /* Takes up more space */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between the info-grid and main-grid */
+  min-width: 320px;
+}
+
+/* Grids for layout */
+.info-grid,
+.main-grid,
+.referral-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Specific widths for info and main grid cards to allow more space for game status */
+#connection-status,
+#game-controls {
+  flex: 1;
+}
+
+#game-info,
+#game-state {
+  flex: 1.5; /* Give more space to the middle column */
+}
+
+/* Specific styling for referral grid items to adjust their width */
+#referral-earnings-container {
+  flex: 0.5; /* Make the earnings card narrower */
+}
+#pending-confirmations-container {
+  flex: 1.5; /* Make the confirmations card wider to fill space */
+}
+/* NEW: Make all referrals container take up full width on its row */
+#all-referrals-container {
+  flex-basis: 100%;
+}
+/* Common card style for all content blocks including logs and dashboard cards */
+.info-card,
+.main-card,
+.log-column,
+.dashboard-card {
+  flex: 1;
+  min-width: 300px;
+  padding: 1.5rem;
+  border: 1px solid var(--card-border-color); /* Use CSS variable */
+  border-radius: 8px;
+  background: var(--card-bg-color); /* Use CSS variable */
+  backdrop-filter: blur(10px); /* NEW: Frosted glass effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Match the rules section shadow */
+  margin-bottom: 1rem; /* Add some margin back */
+}
+
+/* Specific layout for the log column */
+.log-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common heading style for all cards */
+.info-card h2,
+.main-card h2,
+.log-column h2,
+.dashboard-card h2,
+.dashboard-card h3 {
+  margin-top: 0;
+  color: var(--card-heading-color); /* Use CSS variable */
+}
+
+/* Ensure text inside cards is readable */
+.info-card p,
+.main-card p,
+.main-card h3,
+.main-card ul, 
+.main-card li,
+.dashboard-card p,
+.dashboard-card ul {
+  color: var(--card-text-color); /* Use CSS variable */
+}
+
+/* --- End Main Page Layout --- */
+
+h1,
+h2,
+h3 {
+  /* General h1,h2,h3 not inside #game-rules-and-info */
+  color: var(--body-text-color); /* Use CSS variable */
+}
+
+button {
+  /* General button styles */
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px 5px 5px 0;
+  font-size: 1em;
+}
+
+button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+#react-button {
+  background-color: #dc3545; /* Red for emphasis */
+  font-weight: bold;
+  padding: 15px 25px;
+}
+#react-button:hover:not(:disabled) {
+  background-color: #c82333;
+}
+#react-button:disabled {
+  background-color: #f8d7da;
+  color: #721c24;
+  /* NEW: Add a subtle pulse animation when the button becomes active */
+  animation: none;
+}
+
+#react-button:not(:disabled) {
+    animation: pulse-red 1.5s infinite;
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+#player-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#player-list li {
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+#log-output {
+  background-color: #e9ecef; /* This is the light gray background for the log text area */
+  color: #333; /* Dark text for readability */
+  padding: 10px;
+  border-radius: 4px;
+  height: 200px; /* Fixed height */
+  overflow-y: auto; /* Scroll if content overflows */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.9em;
+}
+
+/* Specific overrides for the log output in the new layout */
+.log-column #log-output {
+  flex-grow: 1; /* Make the log area fill the available space */
+  height: auto; /* Let it grow with content */
+  max-height: 75vh; /* But cap its height to 75% of the viewport height */
+  overflow-y: auto; /* Ensure scrollbar appears when content overflows */
+  border: 1px solid #ced4da; /* A slightly softer border for the log area */
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+.timer-container {
+  background-color: #ffeeba;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.timer-value {
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* NEW: Specific, high-contrast style for the click timer */
+#click-timer-container {
+  background-color: #dc3545; /* Red background, same as CLICK button */
+  border-color: #c82333; /* Darker red border */
+  color: #ffffff; /* White text for maximum contrast */
+}
+
+/* New styles for the non-editable referral link display */
+.referral-link-display {
+  border: none !important;
+  background-color: transparent !important;
+  font-weight: bold;
+  color: #dd0000; /* A bootstrap-like danger red */
+  padding: 4px;
+  font-family: monospace;
+  font-size: 2em; /* Increased font size */
+  flex-grow: 1; /* Make it take available space */
+  width: 100%; /* Fallback for non-flex context */
+}
+
+/* Specific style for the copy button to prevent wrapping */
+#copy-referral-link-button {
+  white-space: nowrap;
+}
+
+/* NEW: Styles for QR code with instruction */
+.qr-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between QR and instruction */
+  margin-left: 20px;
+}
+
+#qr-code-container {
+  padding: 5px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.qr-instruction {
+  display: flex;
+  align-items: center;
+  color: var(--card-text-color);
+  font-size: 0.9em;
+  font-style: italic;
+}
+.qr-instruction span:first-child {
+  font-size: 2em;
+  margin-right: 5px;
+}
+/* Styles for referral link input and button */
+.referral-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Utility classes */
+.active-state {
+  font-weight: bold;
+  color: #28a745;
+}
+.error-state {
+  font-weight: bold;
+  color: #dc3545;
+}
+
+/* Styles for the top info container (How to Play & Record) */
+.top-info-container {
+  display: flex;
+  justify-content: space-between; /* Changed for better alignment */
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+#quick-start-guide {
+  flex: 2; /* Takes more space to make the record block narrower */
+  min-width: 300px;
+}
+#record-info {
+  flex: 1; /* Takes less space */
+  background-color: #e9ecef; /* Light grey background like logs */
+  min-width: 250px;
+  padding: 0.1rem 1.5rem; /* Reduced vertical padding to make it shorter */
+}
+
+/* NEW: Styles for the referrals list table */
+.referrals-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.referrals-table th,
+.referrals-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-family: monospace;
+}
+
+.referrals-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* NEW: Styles for social media icons */
+/* NEW: Override for links.html where the background might be light, making white text invisible. */
+#community-links h2 {
+  color: #31708f; /* Dark blue to ensure visibility */
+  margin-top: 2rem; /* Add some space where empty h2s were */
+}
+
+/* NEW: Styles for social media icons */
+#community-links ul {
+  align-items: center; /* Vertically align icons */
+}
+
+.social-icon-link svg {
+  width: 32px;
+  height: 32px;
+  fill: #31708f; /* Match the theme's heading color */
+  transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-icon-link:hover svg {
+  fill: #007bff; /* A brighter blue on hover */
+  transform: scale(1.1);
+}
+
+/* Styles moved from HTML files */
+#community-links a svg {
+  transition: transform 0.2s ease-in-out;
+  width: 36px;
+  height: 36px;
+}
+#community-links a:hover svg {
+  transform: scale(1.2);
+}
+/* Increase size of Nostr icon specifically */
+.link-list a[title="Nostr"] img {
+  width: 42px;
+  height: 42px;
+}
+
+/* Dashboard-specific styles */
+body.dashboard-page {
+  background-color: #1a1a1d;
+  color: #c5c6c7;
+}
+.dashboard-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem 2rem;
+  background: #2a2a2e;
+  border-radius: 8px;
+}
+.stat-card {
+  background: #333;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.stat-card h3 {
+  margin-top: 0;
+  color: #66fcf1;
+  font-size: 1.2rem;
+}
+.stat-card .value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.stat-card .conversion {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 0.5rem;
+}
+.funnel-arrow {
+  text-align: center;
+  font-size: 2rem;
+  color: #4b5263;
+  margin: -0.5rem 0;
+}
+.dashboard-page hr {
+  border-color: #4b5263;
+  margin: 2rem 0;
+}
+.filter-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.filter-controls label {
+  font-weight: bold;
+}
+.filter-controls input,
+.filter-controls select,
+.filter-controls button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #4b5263;
+  background: #333;
+  color: #c5c6c7;
+}
+
+/* NEW: Styles for the toggle switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.toggle-switch-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.toggle-switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.toggle-switch-label:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+.toggle-switch-checkbox:checked + .toggle-switch-label {
+    background-color: #66fcf1; /* Accent color from dashboard */
+}
+.toggle-switch-checkbox:checked + .toggle-switch-label:before {
+    transform: translateX(26px);
+}
+#analytics-mode-label {
+    margin-left: 10px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+/* Styles for the active users indicator */
+.live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #2ecc71; /* green */
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(46, 204, 113, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+/* NEW: Styles for the QR code section in the footer */
+.footer-qr-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.footer-qr-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.footer-qr-link img {
+  width: 80px; /* Reduced size */
+  height: 80px; /* Reduced size */
+  margin-bottom: 8px;
+  border: 1px solid #ddd;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+/* NEW: Styles for the leaderboard table */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 8px 12px;
+  border: 1px solid #bce8f1;
+  text-align: left;
+}
+
+.leaderboard-table th {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+/* NEW: Styles for the inline record display */
+.record-info-inline {
+  font-size: 1.2em; /* Reduced size */
+  color: #0c5460; /* White text for contrast on pink background */
+  background-color: #dc3545; /* Pink color from CLICK button */
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  /* NEW: Use flexbox for alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+.record-info-inline span {
+  font-weight: bold;
+}
+
+/* * NEW: Custom Wallet Modal Styles 
+ * These styles are self-contained for the #custom-wallet-modal structure.
+ */
+
+/* The Modal Overlay */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); 
+  backdrop-filter: blur(5px);
+}
+
+/* Modal Content Box */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  margin: 10% auto; 
+  border: 1px solid #1c1c1f;
+  width: 90%; 
+  max-width: 350px;
+  position: relative;
+  background-color: #131316; 
+  color: #f0f0f0; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
+}
+
+/* NEW: Styles for the Age Verification Modal buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#age-yes-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#age-no-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+.modal-content h2,
+.modal-content .close-button {
+    margin-top: 0;
+}
+
+.modal-content h2 {
+    text-align: center; 
+    margin: 0 0 15px 0; 
+    padding-right: 30px; 
+}
+
+.close-button {
+  color: #aaa;
+  /* float: right; */
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1; 
+  cursor: pointer;
+  /* margin-left: 10px; */
+  position: absolute;
+  top: 15px; 
+  right: 15px; 
+  z-index: 1001; 
+}
+
+
+.close-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(70%); 
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.wallet-options {
+    margin-top: 20px;
+}
+
+.wallet-options button,
+.wallet-options a.deep-link-button {
+  width: 100%;
+  margin: 10px 0;
+  text-align: left;
+  font-weight: bold;
+  display: block; 
+  text-decoration: none; 
+  box-sizing: border-box; 
+  background-color: #1c1c1f; 
+  color: white;
+  padding: 12px 15px;
+  border: 1px solid #555;
+}
+
+.wallet-options button:hover:not(:disabled),
+.wallet-options a.deep-link-button:hover {
+  background-color: #252529;
+}
+
+.wallet-options button {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  position: relative; 
+  background-color: #1c1c1f; 
+  border: 1px solid #333;
+  transition: background-color 0.2s;
+}
+
+.wallet-label-group {
+    display: flex;
+    align-items: center; 
+}
+
+.wallet-options button:hover {
+  background-color: #3a3a3a;
+}
+
+/* The hover arrow container */
+.wallet-options button::after {
+  content: '→'; 
+  font-size: 1.2em;
+  color: #414141;
+  opacity: 0; 
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+
+.wallet-options button:hover::after {
+  opacity: 1;
+  transform: translateX(5px); 
+  color: #f0f0f0;
+}
+
+.wallet-options p {
+    margin-bottom: 10px;
+}
+
+.wallet-icon {
+  width: 20px; 
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    margin: 0;
+    width: 80%;
+    max-width: none;
+    height: auto;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px 20px 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-y: auto; 
+    padding-bottom: 30px; 
+  }
+}
+  
+
+.modal-state.hidden {
+  display: none !important;
+  text-align: center;
+}
+
+.loading-spinner {
+  animation: rotate 2s linear infinite;
+  margin: 20px auto;
+  width: 50px;
+  height: 50px;
+}
+.loading-spinner .path {
+  stroke: #4a90e2; 
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+#status-logo-container img,
+#failure-logo-container img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+.secondary-button {
+    /* background-color: #031eb6; */
+    /* border: 1px solid #4a90e2; */
+    /* color: #4a90e2; */
+     background: linear-gradient(90deg, #a855b4 0%, #8854cd 50%, #5b6cfc 100%);
+            
+            border: none;
+            border-radius: 50px; 
+            padding: 14px 32px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(136, 84, 205, 0.4); /* Subtle glow based on middle color */
+            transition: transform 0.2s;
+          }
+.secondary-button:hover {
+            transform: scale(1.02);
+        }
+
+
+#connection-status-state {
+    text-align: center;
+}
+
+#failure-state {
+    text-align: center;
+}
+
+#status-logo-container,
+#failure-logo-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+}
+
+#status-logo-container img,
+#failure-logo-container img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; 
+    border: 1px solid #333;
+}
+
+#status-logo-container .loading-spinner,
+#failure-logo-container .loading-spinner {
+    display: inline-block; 
+}
+
+#download-link {
+    text-decoration: underline;
+    color: #4a90e2;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    display: inline-block;
+}
+
+#download-link:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.modal-back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1001; 
+}
+
+.modal-back-button:hover {
+    opacity: 0.8;
+}
+
+.back-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(70%);
+}
+
+/* NEW: Style for the credit line in the modal */
+.modal-credit {
+  text-align: center;
+  font-size: 0.75em; /* Make it small */
+  color: #888; /* Muted color */
+  margin-top: 20px; /* Space from the content above */
+  padding-top: 10px; /* A little line separator */
+  border-top: 1px solid #333; /* Subtle separator line */
+}
+/* --- NEW: Top Navbar Styles --- */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px 20px;
+  background-color: var(--card-bg-color);
+  border-bottom: 1px solid var(--card-border-color);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 900;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.nav-label {
+  font-weight: bold;
+  margin-right: 5px;
+  color: var(--body-text-color);
+  font-size: 0.95rem;
+}
+
+.nav-icon-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.nav-icon-link img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s;
+  /* Default Dark Theme: Make icons white */
+  filter: brightness(0) invert(1);
+}
+
+body.light-theme .nav-icon-link img {
+  /* Light Theme: Make icons black */
+  filter: brightness(0);
+}
+
+.nav-icon-link:hover img {
+  transform: scale(1.1);
+}
+
+.nav-text-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--body-text-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.nav-text-link:hover {
+  background-color: var(--card-border-color);
+}
+
+/* Responsive Address Display for Leaderboard */
+.addr-short {
+  display: none;
+}
+.addr-full {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .addr-short {
+    display: inline;
+  }
+  .addr-full {
+    display: none;
+  }
+}
