@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" id="chairs-animation-svg">
+  <style>
+    #chairs-container {
+      animation: rotate-chairs 20s linear infinite;
+    }
+    #chair-5-animated {
+      animation: fade-chair 5s ease-in-out infinite;
+    }
+  </style>
+  <defs>
+    <g id="chair-icon" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 5,15 H 15" /> <path d="M 5,15 V 5 H 15 V 15" /> <path d="M 6,15 L 6,20" /> <path d="M 14,15 L 14,20" />
+    </g>
+  </defs>
+  <g id="chairs-container" transform-origin="100 100">
+    <use href="#chair-icon" id="chair-1" transform="translate(100, 100) rotate(0) translate(0, -65) scale(2)" />
+    <use href="#chair-icon" id="chair-2" transform="translate(100, 100) rotate(72) translate(0, -65) scale(2)" />
+    <use href="#chair-icon" id="chair-3" transform="translate(100, 100) rotate(144) translate(0, -65) scale(2)" />
+    <use href="#chair-icon" id="chair-4" transform="translate(100, 100) rotate(216) translate(0, -65) scale(2)" />
+    <use href="#chair-icon" id="chair-5-animated" transform="translate(100, 100) rotate(288) translate(0, -65) scale(2)" />
+  </g>
+</svg>
