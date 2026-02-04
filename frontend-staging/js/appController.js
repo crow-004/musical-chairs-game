@@ -1535,6 +1535,53 @@ export class AppController {
     // --- NEW: Check for win/loss state on transition to Finished ---
     if (this.currentGameState === "Finished" && oldState !== "Finished") {
       const playerAddrLower = this.playerAddress ? this.playerAddress.toLowerCase() : null;
+
+      // Prepare reaction delta message
+      let reactionMsg = "";
+      if (payload.reactionDeltas) {
+        const deltas = payload.reactionDeltas;
+        const clicks = payload.clicks || [];
+        
+        // Create a set of players involved in the result (winners + loser)
+        const resultPlayers = new Set();
+        if (payload.winners) payload.winners.forEach(w => resultPlayers.add(w.toLowerCase()));
+        if (payload.loser && payload.loser !== "N/A") resultPlayers.add(payload.loser.toLowerCase());
+
+        const deltaLines = [];
+        
+        // 1. List clickers in order
+        clicks.forEach((addr, index) => {
+            const addrLower = addr.toLowerCase();
+            if (resultPlayers.has(addrLower)) {
+                const delta = deltas[addrLower];
+                const shortAddr = this.formatAddress(addr);
+                const isMe = playerAddrLower && addrLower === playerAddrLower;
+                const name = isMe ? "You" : shortAddr;
+                
+                if (index === 0) {
+                    deltaLines.push(`${name}: Fastest!`);
+                } else if (delta !== undefined) {
+                    deltaLines.push(`${name}: +${delta}ms`);
+                }
+                resultPlayers.delete(addrLower); // Remove processed player
+            }
+        });
+
+        // 2. List remaining players (who did not click)
+        resultPlayers.forEach(addr => {
+            const shortAddr = this.formatAddress(addr);
+            const isMe = playerAddrLower && addr === playerAddrLower;
+            const name = isMe ? "You" : shortAddr;
+            deltaLines.push(`${name}: Did not click`);
+        });
+
+        if (deltaLines.length > 0) {
+            reactionMsg = "\n\nReaction Speeds:\n" + deltaLines.join("\n");
+            this.log("Reaction Speeds:");
+            deltaLines.forEach(line => this.log(line));
+        }
+      }
+
       if (playerAddrLower) {
         const isWinner =
           payload.winners &&
@@ -1544,11 +1591,11 @@ export class AppController {
 
         if (isWinner) {
           this.log("Congratulations, you won!");
-          alert("You win!");
+          alert("You win!" + reactionMsg);
           if (this.ui.winSound) { this.ui.winSound.play().catch((e) => this.logError("Win sound play error:", e)); }
         } else if (isLoser) {
           this.log("You lost this round. Better luck next time!");
-          alert("Better luck next time!");
+          alert("Better luck next time!" + reactionMsg);
           // NEW: Update balance display for the loser as well.
           await this.updateBalanceDisplay();
           // Reset controls for the loser so they can play again.
