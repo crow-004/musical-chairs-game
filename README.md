@@ -10,8 +10,9 @@ This repository serves as the main hub for the Musical Chairs project, including
 
 ## ▶️ Play the Game
 
-**[Play on Arbitrum (muschairs.com)](https://muschairs.com)**
-**[Play on Base (base.muschairs.com)](https://base.muschairs.com)**
+**[Play on Base (muschairs.com)](https://muschairs.com)**
+**[Play on Arbitrum (arb.muschairs.com)](https://arb.muschairs.com)**
+**[Play on BNB Chain (bsc.muschairs.com)](https://bsc.muschairs.com)**
 
 ---
 
@@ -65,8 +66,9 @@ To protect yourself from scams, please only use the official links provided belo
     <tr>
       <th align="left" width="140px">Play</th>
       <td align="center" width="100px"><a href="https://eth.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-ethereum.svg" width="40px" alt="Ethereum"/><br/>Ethereum</a></td>
-      <td align="center" width="100px"><a href="https://base.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-base.svg" width="40px" alt="Base"/><br/>Base</a></td>
-      <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-arbitrum.svg" width="40px" alt="Arbitrum"/><br/>Arbitrum</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-base.svg" width="40px" alt="Base"/><br/>Base</a></td>
+      <td align="center" width="100px"><a href="https://arb.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-arbitrum.svg" width="40px" alt="Arbitrum"/><br/>Arbitrum</a></td>
+      <td align="center" width="100px"><a href="https://bsc.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-bsc.svg" width="40px" alt="BNB Chain"/><br/>BNB Chain</a></td>
       <td align="center" width="100px"><a href="https://test.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-test-website.svg" width="40px" alt="Testnet"/><br/>Testnet</a></td>
     </tr>
     <tr>
@@ -104,6 +106,7 @@ To protect yourself from scams, please only use the official links provided belo
 - **Mainnet Contract (Arbitrum):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Mainnet Contract (Base):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Mainnet Contract (Ethereum):** `0x7c01A2a7e9012A98760984F2715A4517AD2c549A`
+- **Mainnet Contract (BNB Chain):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Testnet Contract (Arbitrum Sepolia):** `0x5Af9Ed30A64DB9ED1AE31e9c6D4215A9ED173040`
 - **Support Email:** support@muschairs.com
 
@@ -172,7 +175,7 @@ This project is built with a modern, containerized architecture to ensure reliab
 
 ## 🎮 How to Play
 
-1.  Visit the game website: **[muschairs.com](https://muschairs.com)** or **[base.muschairs.com](https://base.muschairs.com)**
+1.  Visit the game website: **muschairs.com** (Base), **arb.muschairs.com** (Arbitrum) or **bsc.muschairs.com** (BNB Chain)
 2.  Connect your Web3 wallet (e.g., MetaMask).
 3.  Ensure you are on the correct network (the required Chain ID will be displayed on the page).
 4.  Click "Join Game" and follow the prompts to participate!
