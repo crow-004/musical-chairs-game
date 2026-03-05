@@ -50,6 +50,7 @@ Musical Chairs is a solo-developed project by **Crow**, built with the assistanc
 - **Real-time Multiplayer:** WebSocket-based communication for instant game state updates.
 - **Blockchain Integration:** Smart contracts on Ethereum manage game logic and funds.
 - **Secure Authentication:** Players sign messages with their wallets to join, no password required.
+- **Provable Fairness:** Winner determination logic runs inside an **Intel SGX Enclave**, ensuring tamper-proof execution.
 - **Referral System:** On-chain referral tracking.
 - **Full Stack:** A complete application showcasing a robust backend, interactive frontend, and secure smart contracts.
 
@@ -161,11 +162,34 @@ While the smart contracts are public, the backend and frontend source code remai
 
 ---
 
-## 🛠️ Technology Stack
+## �️ Provable Fairness & Intel SGX
+
+To ensure absolute fairness in determining game winners, we utilize **Confidential Computing** powered by **Intel SGX**.
+
+### How it Works
+The critical logic that sorts player reaction times and determines the winner runs inside a secure **Enclave**.
+*   **Isolation:** The enclave is a hardware-protected memory region. Even the server administrator (root) cannot modify the execution or inspect the memory of the enclave.
+*   **Attestation:** The enclave generates a cryptographic "Quote" (Report) signed by the Intel processor. This report proves that the running code matches the source code published in this repository.
+
+### Source Code
+The code running inside the enclave is fully open-source and available in the [**`enclave-service`**](./enclave-service) directory.
+
+### Verification
+You can verify the integrity of the game logic yourself:
+1.  **Click "Verify Enclave"** on the game dashboard (Identity Verification section).
+2.  **Check the Report:** The system will return a signed report containing the `MRENCLAVE` (hash of the code).
+3.  **Reproduce the Build:** Developers can clone this repo, build the enclave image, and verify that the resulting hash matches the live server.
+
+> **See detailed verification and build instructions here**
+
+---
+
+## �🛠️ Technology Stack
 
 This project is built with a modern, containerized architecture to ensure reliability and scalability.
 
 - **Backend:** Written in **Go**, handling all real-time game logic, user sessions, and WebSocket communication. The source code is currently proprietary.
+- **Enclave Service:** **Go** service running inside an **EGo** (Intel SGX) container for secure winner determination.
 - **Smart Contracts:** **Solidity** contracts, deployed on an Ethereum-compatible network, manage the core game rules and funds. The contracts are **open-source (MIT License)** and have been verified on-chain. You can review the code in our [contracts repository](https://github.com/crow-004/musical-chairs-contracts).
 - **Frontend:** Built with vanilla **JavaScript, HTML, and CSS** for a fast and responsive user experience.
 - **Infrastructure:** The entire application is containerized using **Docker** and orchestrated with **Docker Compose**, running behind an **Nginx** reverse proxy for security and performance.
