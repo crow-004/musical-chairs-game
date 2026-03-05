@@ -33,19 +33,23 @@ To verify that the code running on our production server matches this source cod
     cd musical-chairs-game/enclave-service
     ```
 
-2.  Build the Docker image using the provided Dockerfile:
+2.  Build and sign the enclave using the `ego-dev` container. This ensures a reproducible environment.
     ```bash
-    docker build -t enclave-verify .
+    docker run --rm -v $(pwd):/app -w /app ghcr.io/edgelesssys/ego-dev:v1.8.1 /bin/sh -c "ego-go build main.go && ego sign main && echo 'MRENCLAVE:' && ego uniqueid main && echo 'Signer ID:' && ego signerid main"
     ```
-    *Note: This uses the official `ghcr.io/edgelesssys/ego-dev` image to ensure a consistent build environment.*
+    *Note: This command mounts your local directory, builds the Go binary, signs it, and then prints the measurements.*
 
-3.  Extract the `enclave.json` or run the container to see the measurement.
-    ```bash
-    docker run --rm -it --entrypoint ego enclave-verify sign main
-    ```
-    Look for the **MRENCLAVE** (or `Unique ID`) in the output.
+3.  Look for the output in the console:
+    *   **MRENCLAVE:** The hex string following `MRENCLAVE:`.
+    *   **Signer ID:** The hex string following `Signer ID:`.
 
 4.  **Compare:** Compare this hash with the `report` field returned by the live server's `/api/v1/enclave/attestation` endpoint (or via the "Verify Enclave" button on the website).
+
+## Current Production Deployment
+
+*   **Commit:** `HEAD` of main branch
+*   **MRENCLAVE:** `3e9f74071eb7cf2b77751755175c66cbf6f55e62e6a167888cc9a480595950bc`
+*   **Signer ID:** `6e289aa088d502a9df0b1835b0b5a14178f03ace649e7d30b520fba22126271b`
 
 ## Sample Attestation Report
 
