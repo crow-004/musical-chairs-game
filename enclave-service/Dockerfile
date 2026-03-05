@@ -31,5 +31,10 @@ COPY --from=builder /app/enclave.json .
 # Expose the port the service listens on
 EXPOSE 8081
 
+# Create a QCNL config inside the image permanently
+RUN mkdir -p /etc/intel && \
+    echo '{"use_secure_cert": false, "collateral_service": "https://localhost:8082/sgx/certification/v4/", "pccs_url": "https://localhost:8082/sgx/certification/v4/"}' > /etc/sgx_default_qcnl.conf && \
+    cp /etc/sgx_default_qcnl.conf /etc/intel/sgx_default_qcnl.conf
+
 # The command to run the service. The simulation mode will be enabled via environment variable in docker-compose.
 CMD ["ego", "run", "main"]
