@@ -9,6 +9,11 @@ The service is built using **Go** and **EGo** (a framework for building Confiden
 2.  **Confidentiality:** The execution state is encrypted in RAM.
 3.  **Attestability:** The processor can generate a cryptographic proof (Remote Attestation) that this specific code is running on genuine hardware.
 
+### Attestation Caching & Strict TTL
+To optimize performance and security, the backend implements a **Strict TTL (Time-To-Live)** caching mechanism for attestation reports:
+*   **Caching:** The backend requests and verifies the Enclave's Attestation Report, caching it for a short duration (5 minutes).
+*   **Strict TTL:** This ensures that the proof of integrity provided to users is always fresh, preventing replay attacks with old reports while protecting the Enclave Service from excessive load.
+
 ## Source Code
 
 The core logic is located in [`main.go`](./main.go). It handles:
@@ -49,7 +54,7 @@ To verify that the code running on our production server matches this source cod
 
 *   **Commit:** `HEAD` of main branch
 *   **MRENCLAVE:** `3e9f74071eb7cf2b77751755175c66cbf6f55e62e6a167888cc9a480595950bc`
-*   **Signer ID:** `6e289aa088d502a9df0b1835b0b5a14178f03ace649e7d30b520fba22126271b`
+*   **Signer ID:** `b905507a224d217e7a5981684b6c379466d362a55f40785116c81c3a257f70d9`
 
 ## Sample Attestation Report
 
