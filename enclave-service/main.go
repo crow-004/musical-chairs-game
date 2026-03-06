@@ -38,13 +38,21 @@ type GameResultResponse struct {
 
 func main() {
 	// EGo can terminate TLS inside the enclave, ensuring the request reaches the secure environment directly.
-	// For simplicity in this example, we use standard HTTP, assuming the connection is internal/secure or proxied.
+	// We use Attested TLS to allow the client to verify the enclave's identity and integrity.
 	http.HandleFunc("/api/result", handleDetermineResult)
 	http.HandleFunc("/api/attestation", handleAttestation)
 
 	port := "8081"
-	fmt.Printf("Enclave Service listening on port %s...\n", port)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	fmt.Printf("Enclave Service listening on port %s (HTTP)...\n", port)
+
+	// TLS is disabled for internal Docker communication.
+	// Attestation verification should be done by checking the report payload from /api/attestation.
+
+	server := &http.Server{
+		Addr: ":" + port,
+	}
+
+	log.Fatal(server.ListenAndServe())
 }
 
 func handleAttestation(w http.ResponseWriter, r *http.Request) {

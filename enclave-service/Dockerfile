@@ -22,19 +22,31 @@ RUN ego sign main
 # We need the EGo runtime and the SGX driver (or simulation library).
 FROM ghcr.io/edgelesssys/ego-deploy:v1.8.1
 
+# Install gosu for secure user switching and clean up apt cache
+RUN apt-get update && apt-get install -y gosu curl && rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user 'ego'
+RUN useradd -m -s /bin/bash ego
+
 WORKDIR /app
 
-# Copy the built executable and the signature file from the builder stage
-COPY --from=builder /app/main .
-COPY --from=builder /app/enclave.json .
+# Copy the built executable and signature with correct ownership
+COPY --from=builder --chown=ego:ego /app/main .
+COPY --from=builder --chown=ego:ego /app/enclave.json .
+
+# Copy the entrypoint script
+COPY --chown=ego:ego run.sh .
+RUN chmod +x run.sh
+
+# Ensure the entire app directory is owned by the non-root user for security.
+RUN chown -R ego:ego /app
 
 # Expose the port the service listens on
 EXPOSE 8081
 
-# Create a QCNL config inside the image permanently
-RUN mkdir -p /etc/intel && \
-    echo '{"use_secure_cert": false, "collateral_service": "https://localhost:8082/sgx/certification/v4/", "pccs_url": "https://localhost:8082/sgx/certification/v4/"}' > /etc/sgx_default_qcnl.conf && \
-    cp /etc/sgx_default_qcnl.conf /etc/intel/sgx_default_qcnl.conf
+# Add Healthcheck to verify the service is responding
+HEALTHCHECK --interval=30s --timeout=10s --start-period=20s --retries=3 \
+  CMD curl -f http://localhost:8081/api/attestation?nonce=healthcheck || exit 1
 
-# The command to run the service. The simulation mode will be enabled via environment variable in docker-compose.
-CMD ["ego", "run", "main"]
+# Use the entrypoint script to configure the environment and drop root privileges before execution.
+ENTRYPOINT ["/app/run.sh"]
