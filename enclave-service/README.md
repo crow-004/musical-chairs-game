@@ -67,8 +67,8 @@ To verify that the code running on our production server matches this source cod
 ## Current Production Deployment
 
 *   **Commit:** `HEAD` of main branch
-*   **MRENCLAVE:** `3e9f74071eb7cf2b77751755175c66cbf6f55e62e6a167888cc9a480595950bc`
-*   **Signer ID:** `52ca16381506f635f3264091be32fd7953a6dce0be109e6e9fe741639dd4bd76`
+*   **MRENCLAVE:** `cf6214234ae229ad87def3259233186980c026ca0904225dc7c10b51764aa459`
+*   **Signer ID:** `05ef84057209de9c38381ba83edd468a2394df34c4a558369f7109476bedd0c8`
 
 ## Sample Attestation Report
 
