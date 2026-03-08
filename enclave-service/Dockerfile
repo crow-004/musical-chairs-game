@@ -33,7 +33,10 @@ WORKDIR /app
 # Copy the built executable and signature with correct ownership
 COPY --from=builder --chown=ego:ego /app/main .
 COPY --from=builder --chown=ego:ego /app/enclave.json .
-COPY --from=builder --chown=ego:ego /app/enclave.pem .
+COPY --from=builder --chown=ego:ego /app/private.pem .
+
+# Force permissions so EGo doesn't complain
+RUN chmod 644 private.pem
 
 # Copy the entrypoint script
 COPY --chown=ego:ego run.sh .
