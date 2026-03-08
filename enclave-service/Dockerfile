@@ -33,6 +33,7 @@ WORKDIR /app
 # Copy the built executable and signature with correct ownership
 COPY --from=builder --chown=ego:ego /app/main .
 COPY --from=builder --chown=ego:ego /app/enclave.json .
+COPY --from=builder --chown=ego:ego /app/enclave.pem .
 
 # Copy the entrypoint script
 COPY --chown=ego:ego run.sh .
