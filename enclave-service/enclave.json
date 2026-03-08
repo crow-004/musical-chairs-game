@@ -1,6 +1,6 @@
 {
  "exe": "main",
- "key": "private.pem",
+ "key": "enclave.pem",
  "debug": true,
  "heapSize": 512,
  "executableHeap": false,
