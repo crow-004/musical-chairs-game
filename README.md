@@ -241,7 +241,7 @@ When reporting a bug, please include:
 
 If you enjoy the game and want to contribute to its development, you can send a donation to one of the addresses below. Thank you for your support!
 
-- **EVM (ETH/BSC/Base):** `0x02144a84Fbd686081f464E3edDAD5EE62632FeD9`
+- **EVM (ETH/BSC/Base etc):** `0x02144a84Fbd686081f464E3edDAD5EE62632FeD9`
 - **Bitcoin (BTC):** `bc1q43h0xrgu6kfz37xjym96m69wllrrcxm8qj9ghy`
 - **Solana (SOL):** `F8YkBXie6cJBbjC3iddrywRRDng4VSrogkX7KGc84Wgc`
 - **Tron (TRX):** `TAMNeXoBorgCVy5SNXEW41mcNcmiB6bRun`
