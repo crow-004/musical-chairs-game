@@ -8,11 +8,9 @@ This repository serves as the main hub for the Musical Chairs project, including
 
 ---
 
-## ▶️ Play the Game
+## ▶️ Play Now
 
-**[Play on Base (muschairs.com)](https://muschairs.com)**
-**[Play on Arbitrum (arb.muschairs.com)](https://arb.muschairs.com)**
-**[Play on BNB Chain (bsc.muschairs.com)](https://bsc.muschairs.com)**
+**[➡️ muschairs.com](https://muschairs.com)**
 
 ---
 
@@ -66,11 +64,11 @@ To protect yourself from scams, please only use the official links provided belo
   <tbody>
     <tr>
       <th align="left" width="140px">Play</th>
-      <td align="center" width="100px"><a href="https://eth.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-ethereum.svg" width="40px" alt="Ethereum"/><br/>Ethereum</a></td>
-      <td align="center" width="100px"><a href="https://muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-base.svg" width="40px" alt="Base"/><br/>Base</a></td>
-      <td align="center" width="100px"><a href="https://arb.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-arbitrum.svg" width="40px" alt="Arbitrum"/><br/>Arbitrum</a></td>
-      <td align="center" width="100px"><a href="https://bsc.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-bsc.svg" width="40px" alt="BNB Chain"/><br/>BNB Chain</a></td>
-      <td align="center" width="100px"><a href="https://test.muschairs.com" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-test-website.svg" width="40px" alt="Testnet"/><br/>Testnet</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com/?network=ethereum" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-ethereum.svg" width="40px" alt="Ethereum"/><br/>Ethereum</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com/?network=base" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-base.svg" width="40px" alt="Base"/><br/>Base</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com/?network=arbitrum" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-arbitrum.svg" width="40px" alt="Arbitrum"/><br/>Arbitrum</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com/?network=bsc" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/refs/heads/main/docs/images/icon-bsc.svg" width="40px" alt="BNB Chain"/><br/>BNB Chain</a></td>
+      <td align="center" width="100px"><a href="https://muschairs.com/?network=staging" target="_blank" rel="noopener noreferrer"><img src="https://raw.githubusercontent.com/crow-004/musical-chairs-game/main/docs/images/icon-test-website.svg" width="40px" alt="Testnet"/><br/>Testnet</a></td>
     </tr>
     <tr>
       <th align="left">Community</th>
@@ -216,11 +214,10 @@ This project is built with a modern, containerized architecture to ensure reliab
 ---
 
 ## 🎮 How to Play
-
-1.  Visit the game website: **muschairs.com** (Base), **arb.muschairs.com** (Arbitrum) or **bsc.muschairs.com** (BNB Chain)
-2.  Connect your Web3 wallet (e.g., MetaMask).
-3.  Ensure you are on the correct network (the required Chain ID will be displayed on the page).
-4.  Click "Join Game" and follow the prompts to participate!
+1.  Visit **[muschairs.com](https://muschairs.com)**.
+2.  Use the dropdown menu to select your preferred network (Base, Arbitrum, etc.).
+3.  Connect your Web3 wallet (e.g., MetaMask).
+4.  Click "Join Game" and follow the prompts!
 
 ---
 
