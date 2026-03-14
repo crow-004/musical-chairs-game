@@ -108,8 +108,11 @@ To protect yourself from scams, please only use the official links provided belo
 - **Smart Contracts Repo:** https://github.com/crow-004/musical-chairs-contracts
 - **Mainnet Contract (Arbitrum):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
 - **Mainnet Contract (Base):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
-- **Mainnet Contract (Ethereum):** `0x7c01A2a7e9012A98760984F2715A4517AD2c549A`
 - **Mainnet Contract (BNB Chain):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
+- **Mainnet Contract (Optimism):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
+- **Mainnet Contract (zkSync):** `0xEDA164585a5FF8c53c48907bD102A1B593bd17eF`
+- **Mainnet Contract (Ethereum):** `0x7c01A2a7e9012A98760984F2715A4517AD2c549A`
+- **Mainnet Contract (Polygon):** `0x9880A2fcb9BE91051e337596a2b1a3091bF6d69C`
 - **Testnet Contract (Arbitrum Sepolia):** `0x5Af9Ed30A64DB9ED1AE31e9c6D4215A9ED173040`
 - **Support Email:** support@muschairs.com
 
