@@ -48,6 +48,7 @@ Musical Chairs is a solo-developed project by **Crow**, built with the assistanc
 - **Real-time Multiplayer:** WebSocket-based communication for instant game state updates.
 - **Blockchain Integration:** Smart contracts on Ethereum manage game logic and funds.
 - **Secure Authentication:** Players sign messages with their wallets to join, no password required.
+- **Zero-Friction Onboarding:** Support for social login (Google, Apple, X) combined with ERC-4337 Account Abstraction. Learn more here.
 - **Provable Fairness:** Winner determination logic runs inside an **Intel SGX Enclave**, ensuring tamper-proof execution.
 - **Referral System:** On-chain referral tracking.
 - **Full Stack:** A complete application showcasing a robust backend, interactive frontend, and secure smart contracts.
