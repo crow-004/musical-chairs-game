@@ -6,9 +6,9 @@
 
 ### **Abstract**
 
-Musical Chairs is a real-time, on-chain game of speed, strategy, and survival deployed on the Arbitrum and Base networks. Inspired by the universally understood childhood game and the daily rush for a seat on the metro, it distills a moment of competitive thrill into a simple, fast, and transparently fair Web3 experience.
+Musical Chairs is a real-time, on-chain game of speed, strategy, and survival—a pure competition of skill, not gambling—deployed on the Arbitrum and Base networks. Inspired by the universally understood childhood game and the daily rush for a seat on the metro, it distills a moment of competitive thrill into a simple, fast, and transparently fair Web3 experience.
 
-The game operates on a zero-sum, player-funded economic model, ensuring sustainability and avoiding the inflationary pressures common in many GameFi projects. With a focus on security, transparency, and community-driven growth, Musical Chairs aims to be a sandbox for Web3 mass adoption, proving that blockchain gaming can be both fun and economically sound.
+The game operates on a zero-sum, player-funded economic model, ensuring sustainability and avoiding the inflationary pressures common in many GameFi projects. With a focus on security, transparency, and community-driven growth, Musical Chairs aims to be a sandbox for Web3 mass adoption, proving that blockchain gaming—when built on skill rather than chance—can be both fun and economically sound.
 
 ---
 
@@ -36,6 +36,7 @@ The result is Musical Chairs: a game that transforms a simple, real-world moment
 ### 3. The solution
 
 *   **Radical accessibility:** Musical Chairs offers intuitive gameplay and a low entry threshold (stake < $10), making it an ideal "first game" in Web3.
+*   **Skill-Based Competition:** Unlike gambling, the outcome is determined solely by player reaction time. There is no house edge or element of chance.
 *   **Sustainable zero-sum economy:** Our model is funded exclusively by players in the current session. It does not depend on the influx of new users for payouts and is inherently sustainable.
 *   **Provable integrity:** All key actions (deposits, winnings) take place on-chain in a verified smart contract, ensuring complete transparency.
 *   **Built-in growth mechanism:** Our on-chain referral system turns players into partners, creating a decentralized and organic growth engine.
