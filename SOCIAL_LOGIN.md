@@ -19,7 +19,7 @@ Instead of forcing the user to interact directly with their EOA (which requires 
 ### Layer 3: Transaction Execution (Bundlers & Paymasters)
 Because the player's funds are kept on the Smart Account, they can perform actions that would traditionally require complex signatures.
 *   **Bundling:** Transactions (like "React" or "Join") are sent as `UserOperations` to a Bundler (we use **Pimlico**). 
-*   **Gas Sponsorship:** Our infrastructure supports **Paymasters**. When enabled in the backend config, the protocol can sponsor the gas fees for the players, making the game completely "Gas-Free" for the end-user.
+*   **Gas Sponsorship:** Our infrastructure supports **Paymasters**. Currently, players pay their own network fees in native ETH. However, we plan to utilize gas sponsorship for future promotional events. A permanent "Gas-Free" experience is being evaluated for the stage when the game moves to stakes using our internal token.
 
 ## How Persistence Works
 
@@ -34,6 +34,7 @@ One of the most common questions is: *"How does the system know I have a wallet 
 We believe in Web3 sovereignty. Even though the onboarding feels like Web2, the user is in full control:
 *   **Export Key:** Users can at any time export the private key of their EOA owner. 
 *   **External Access:** This key can be imported into MetaMask or Rabby. 
+*   **Direct Transfers:** Our UI includes a native "Transfer" feature, allowing users to send their ETH winnings to any external EVM address without leaving the application.
 *   **Decentralized Recovery:** If our website goes down, users can access their wallet and funds through the Web3Auth Wallet Portal or by interacting with the blockchain directly via Etherscan.
 
 ## Summary of Benefits
@@ -41,7 +42,8 @@ We believe in Web3 sovereignty. Even though the onboarding feels like Web2, the 
 | Feature | Benefit for the Player |
 | :--- | :--- |
 | **Social Sign-in** | No seed phrases to write down or lose. |
-| **Gasless Play** | No need to buy native tokens (ETH/POL) just to start. |
+| **Future Gasless Play** | Support for sponsored fees during promo events and token-based rounds. |
+| **Native Management** | Export keys or transfer funds to any EVM address directly from the UI. |
 | **Deterministic ID** | Your progress and balance are tied to your social identity. |
 | **Bank-Grade Security** | Powered by Intel SGX enclaves and proven ERC-4337 standards. |
 
