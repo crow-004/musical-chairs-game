@@ -60,12 +60,13 @@ type GameResultRequest struct {
 
 // GameResultResponse is the signed result returned by the enclave.
 type GameResultResponse struct {
-	Winners       []string `json:"winners"`
-	Loser         string   `json:"loser"`
-	Signature     string   `json:"signature"`     // Hex encoded signature of the result
-	PublicKey     string   `json:"publicKey"`     // Hex encoded public key (for verification)
-	EncryptionKey string   `json:"encryptionKey"` // PEM encoded RSA public key
-	Error         string   `json:"error,omitempty"`
+	Winners         []string         `json:"winners"`
+	Loser           string           `json:"loser"`
+	DecryptedClicks map[string]int64 `json:"decryptedClicks"` // NEW: Map address to reaction time
+	Signature       string           `json:"signature"`       // Hex encoded signature of the result
+	PublicKey       string           `json:"publicKey"`       // Hex encoded public key (for verification)
+	EncryptionKey   string           `json:"encryptionKey"`   // PEM encoded RSA public key
+	Error           string           `json:"error,omitempty"`
 }
 
 func main() {
@@ -132,11 +133,12 @@ func handleAttestation(w http.ResponseWriter, r *http.Request) {
 func handleDetermineResult(w http.ResponseWriter, r *http.Request) {
 	var req GameResultRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		log.Printf("handleDetermineResult: Error decoding request body: %v", err)
 		http.Error(w, "Invalid request body", http.StatusBadRequest)
 		return
 	}
 
-	winners, loser, err := determineWinnersAndLoser(req)
+	winners, loser, decryptedClicks, err := determineWinnersAndLoser(req)
 	if err != nil {
 		json.NewEncoder(w).Encode(GameResultResponse{Error: err.Error()})
 		return
@@ -158,11 +160,12 @@ func handleDetermineResult(w http.ResponseWriter, r *http.Request) {
 	rsaPubBytes, _ := x509.MarshalPKIXPublicKey(&decryptionKey.PublicKey)
 
 	resp := GameResultResponse{
-		Winners:       winners,
-		Loser:         loser,
-		Signature:     signature,
-		PublicKey:     hex.EncodeToString(publicKey),
-		EncryptionKey: hex.EncodeToString(rsaPubBytes),
+		Winners:         winners,
+		Loser:           loser,
+		DecryptedClicks: decryptedClicks,
+		Signature:       signature,
+		PublicKey:       hex.EncodeToString(publicKey),
+		EncryptionKey:   hex.EncodeToString(rsaPubBytes),
 	}
 
 	w.Header().Set("Content-Type", "application/json")
@@ -170,24 +173,30 @@ func handleDetermineResult(w http.ResponseWriter, r *http.Request) {
 }
 
 // determineWinnersAndLoser contains the core logic moved from the main backend.
-func determineWinnersAndLoser(req GameResultRequest) ([]string, string, error) {
+func determineWinnersAndLoser(req GameResultRequest) ([]string, string, map[string]int64, error) {
+	log.Printf("determineWinnersAndLoser: Processing game %s. Clicks: %d, Deposited: %d", req.GameID, len(req.Clicks), len(req.DepositedPlayers))
+
 	if len(req.DepositedPlayers) < req.MinPlayers {
-		return nil, "", fmt.Errorf("not enough deposited players (%d/%d)", len(req.DepositedPlayers), req.MinPlayers)
+		return nil, "", nil, fmt.Errorf("not enough deposited players (%d/%d)", len(req.DepositedPlayers), req.MinPlayers)
 	}
 
 	// Decrypt clicks and map them
 	clickedMap := make(map[string]bool)
+	decryptedClicks := make(map[string]int64)
 	validClicks := []Click{} // Store decrypted clicks for sorting
 
-	for _, c := range req.Clicks {
+	for i, c := range req.Clicks {
 		// Decode hex ciphertext
 		ciphertext, err := hex.DecodeString(c.Ciphertext)
 		if err != nil {
+			log.Printf("determineWinnersAndLoser: Click %d hex decode failed: %v", i, err)
 			continue // Skip invalid hex
 		}
+
 		// Decrypt using RSA-OAEP
 		plaintext, err := rsa.DecryptOAEP(sha256.New(), rand.Reader, decryptionKey, ciphertext, nil)
 		if err != nil {
+			log.Printf("determineWinnersAndLoser: Click %d decryption failed: %v. Data len: %d", i, err, len(ciphertext))
 			continue // Skip invalid decryption (wrong key or corrupted)
 		}
 
@@ -195,9 +204,15 @@ func determineWinnersAndLoser(req GameResultRequest) ([]string, string, error) {
 		var payload struct {
 			PlayerAddress string `json:"playerAddress"`
 		}
-		if err := json.Unmarshal(plaintext, &payload); err == nil && payload.PlayerAddress != "" {
+		if err := json.Unmarshal(plaintext, &payload); err != nil {
+			log.Printf("determineWinnersAndLoser: Click %d JSON error: %v. Raw: %s", i, err, string(plaintext))
+		} else if payload.PlayerAddress == "" {
+			log.Printf("determineWinnersAndLoser: Click %d has empty address", i)
+		} else {
 			addrLower := strings.ToLower(payload.PlayerAddress)
+			log.Printf("determineWinnersAndLoser: Click %d success for: %s", i, addrLower)
 			clickedMap[addrLower] = true
+			decryptedClicks[addrLower] = c.ReactionTime
 			// Store valid click with original timestamp for sorting
 			// We reuse the Click struct but conceptually we are storing the decrypted address now
 			// Note: We can't modify c.Ciphertext to be address, so we create a new list or map.
@@ -216,6 +231,7 @@ func determineWinnersAndLoser(req GameResultRequest) ([]string, string, error) {
 			depositedButNotClicked = append(depositedButNotClicked, lowerAddr)
 		}
 	}
+	log.Printf("determineWinnersAndLoser: Players considered non-clickers: %v", depositedButNotClicked)
 
 	var loser string
 
@@ -259,7 +275,7 @@ func determineWinnersAndLoser(req GameResultRequest) ([]string, string, error) {
 	}
 
 	if loser == "" {
-		return nil, "", fmt.Errorf("could not determine loser")
+		return nil, "", nil, fmt.Errorf("could not determine loser")
 	}
 
 	// Determine winners (everyone else)
@@ -272,5 +288,5 @@ func determineWinnersAndLoser(req GameResultRequest) ([]string, string, error) {
 	}
 	sort.Strings(winners) // Deterministic order
 
-	return winners, loser, nil
+	return winners, loser, decryptedClicks, nil
 }
