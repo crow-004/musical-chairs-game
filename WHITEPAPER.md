@@ -6,7 +6,7 @@
 
 ### **Abstract**
 
-Musical Chairs is a real-time, on-chain game of speed, strategy, and survival—a pure competition of skill, not gambling—deployed on the Arbitrum and Base networks. Inspired by the universally understood childhood game and the daily rush for a seat on the metro, it distills a moment of competitive thrill into a simple, fast, and transparently fair Web3 experience.
+Musical Chairs is a real-time, on-chain game of speed, strategy, and survival—a pure competition of skill, not gambling—**deployed across 11 major networks, including Arbitrum, Base, Ethereum, Polygon, and more.** Inspired by the universally understood childhood game and the daily rush for a seat on the metro, it distills a moment of competitive thrill into a simple, fast, and transparently fair Web3 experience.
 
 The game operates on a zero-sum, player-funded economic model, ensuring sustainability and avoiding the inflationary pressures common in many GameFi projects. With a focus on security, transparency, and community-driven growth, Musical Chairs aims to be a sandbox for Web3 mass adoption, proving that blockchain gaming—when built on skill rather than chance—can be both fun and economically sound.
 
@@ -35,7 +35,7 @@ The result is Musical Chairs: a game that transforms a simple, real-world moment
 
 ### 3. The solution
 
-*   **Radical accessibility:** Musical Chairs offers intuitive gameplay and a low entry threshold (stake < $10), making it an ideal "first game" in Web3.
+*   **Radical accessibility:** Musical Chairs offers intuitive gameplay and a **wide range of entry thresholds (stakes from $2 to $100)**, making it an ideal "first game" in Web3.
 *   **Skill-Based Competition:** Unlike gambling, the outcome is determined solely by player reaction time. There is no house edge or element of chance.
 *   **Sustainable zero-sum economy:** Our model is funded exclusively by players in the current session. It does not depend on the influx of new users for payouts and is inherently sustainable.
 *   **Provable integrity:** All key actions (deposits, winnings) take place on-chain in a verified smart contract, ensuring complete transparency.
@@ -48,7 +48,7 @@ The result is Musical Chairs: a game that transforms a simple, real-world moment
 The project is built with a modern, containerized architecture to ensure reliability, security, and scalability.
 
 *   **Backend:** Written in **Go**, handling all real-time game logic, user sessions, and WebSocket communication. The source code is currently proprietary to protect our unique implementation.
-*   **Smart Contracts:** **Solidity** contracts deployed on the Arbitrum and Base networks manage the core game rules, funds, and referral logic. In the spirit of Web3, all smart contracts are **open-source (MIT License)** and verified on-chain. You can review the code in our [contracts repository](https://github.com/crow-004/musical-chairs-contracts).
+*   **Smart Contracts:** **Solidity** contracts **deployed across 11 major EVM-compatible networks** manage the core game rules, funds, and referral logic. In the spirit of Web3, all smart contracts are **open-source (MIT License)** and verified on-chain. You can review the code in our [contracts repository](https://github.com/crow-004/musical-chairs-contracts).
 *   **Frontend:** Built with vanilla **JavaScript, HTML, and CSS** for a lightweight, fast, and universally responsive user experience.
 *   **Infrastructure:** The entire application is containerized using **Docker** and orchestrated with **Docker Compose**, running behind an **Nginx** reverse proxy for security and performance.
 
@@ -68,9 +68,9 @@ The project is built with a modern, containerized architecture to ensure reliabi
 
 The gameplay loop is designed to be intuitive and fast, with each game session lasting under 15 minutes.
 
-1.  **Connect & Join:** Players connect their Web3 wallet (e.g., MetaMask) to the application on the Arbitrum or Base network. Clicking "Join Game" places the player in a waiting room.
+1.  **Connect & Join:** Players connect their Web3 wallet (e.g., MetaMask) to the application on **any of the 11 supported networks.** Clicking "Join Game" places the player in a waiting room.
 2.  **Game Creation:** A new game is created on-chain when 5 players are in the waiting room, or if a timer expires with at least 2 players.
-3.  **Deposit Stake:** Once the game is created, participants have a limited time to deposit the fixed stake of 0.002 ETH into the smart contract.
+3.  **Deposit Stake:** Once the game is created, participants have a limited time to deposit the **network-specific stake (ranging from $2 to $100 equivalent).**
 4.  **The Round:** When all players have deposited, the music starts. When it stops, a "CLICK!" button appears. The last player to click is eliminated. The backend server determines the loser based on reaction time to ensure a real-time experience.
 5.  **Winning & Payouts:** The game ends when only winners remain. The winners share the loser's stake, minus a small platform commission. Winnings are then available to be claimed from the smart contract.
 
@@ -80,7 +80,7 @@ The gameplay loop is designed to be intuitive and fast, with each game session l
 
 The economic model of Musical Chairs is designed for sustainability and fairness, deliberately avoiding the pitfalls of inflationary tokenomics.
 
-*   **Stake:** A fixed stake of 0.002 ETH is required to participate in a game. This amount can be adjusted by the contract owner to adapt to market conditions.
+*   **Stake:** **Stakes are network-specific and range from approximately $2 to $100.** This variety allows players to choose a level of competition that fits their preference. This amount can be adjusted by the contract owner to adapt to market conditions.
 *   **Prize Pool:** The prize pool for each game is funded *only* by the players in that specific game. There is no reliance on new players coming in to pay out old players. Winnings are derived directly from the loser's stake.
 *   **Commission:** The platform earns revenue through a small, percentage-based commission (currently 2.5%) taken from each player's stake that contributes to the total pot. This is a classic, sustainable business model that works even with fluctuating volume.
 *   **Revenue Distribution:** **100% of all platform revenue is reinvested directly back into the project.** This covers marketing expenses, operational costs (servers, gas fees), future security audits, and legal formalization. This strategy ensures that all early success directly fuels future growth.
@@ -92,10 +92,11 @@ The economic model of Musical Chairs is designed for sustainability and fairness
 To bootstrap community growth, we have implemented a fully on-chain referral system.
 
 *   **How It Works:**
-    1.  **Share Your Link:** Each player has a unique referral link available on their dashboard, including a QR code that can be used instead of a long text link.
-    2.  **First-Time Join:** When a new player joins a game for the first time using a referral link, an on-chain request is created for the referrer to approve.
+    1.  **Share Your Link or Code:** Each player has a unique referral link and the ability to **generate unique Promo Codes** on their dashboard.
+    2.  **First-Time Join:** When a new player joins a game for the first time using a referral link or a **promo code**, an on-chain request is created for the referrer to approve.
     3.  **Confirm Referees:** The referrer must approve each new player once on the "My Referrals" dashboard.
-    4.  **Start Earning:** Once confirmed, the referrer earns a commission from the platform's fees for every game their referee plays, forever.
+    4.  **Promo Code Benefit:** Referees who join using a promo code receive an **additional 15% discount** on the platform commission.
+    5.  **Start Earning:** Once confirmed, the referrer earns a commission from the platform's fees for every game their referee plays, forever.
 
 *   **Earning Commission:**
     A portion of the platform's commission from every game is allocated to a Referral Pool. This pool is then distributed among the referrers of the players in that game. Your share is proportional to the number of players you referred in that game. For example, if your referee is the only referred player in a game, you receive the entire referral commission for that game.
